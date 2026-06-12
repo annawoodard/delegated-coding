@@ -637,6 +637,39 @@ all of it, and the agent reads it every single session. Theirs starts at
 ten lines; this is what it compounds into.
 :::
 
+## When a lesson outgrows the project: **skills**
+
+`AGENTS.md` is memory for *one* project. Lessons that generalize become
+**skills**: small packaged workflows the agent discovers and applies when a
+task matches — works in Claude Code, Cursor, Codex, and Gemini CLI.
+
+. . .
+
+We've published ours — a year of research-agent judgment, free to install:
+[**github.com/uchicago-dsi/ai-sci-skills**](https://github.com/uchicago-dsi/ai-sci-skills)
+
+- `$experiment-design` — propose the **smallest experiment that changes a decision**
+- `$sensemaking` — check whether a finding **makes sense before trusting it**
+- `$skeptical-labmate` — **stress-test** claims, baselines, and follow-up plans
+- `$rut-breaker` — detect **low-yield loops** and force a better reset move
+- `$lab-notebook` / `$handoff` — keep records **restartable and auditable**
+
+. . .
+
+Usage is one line: *"Use `$sensemaking` before you summarize these results."*
+
+::: {.notes}
+~3 min. The arc completes here: a rule fixes one mistake, AGENTS.md
+compounds rules for one project, skills package what generalizes ACROSS
+projects — notice the table is this talk in tool form (smallest decisive
+experiment, skepticism before trust, auditable records). Install = clone
+the repo and copy/symlink the folders into the agent's skills directory
+(~/.claude/skills, ~/.cursor/skills, ...); README has per-tool commands.
+Also in the repo: $slurm and $job-babysitting for cluster work — relevant
+to anyone whose REU project touches the RCC clusters. Keep shared skills
+generic; project facts stay in AGENTS.md.
+:::
+
 ## 3. Give meeting-sized tasks
 
 One task ≈ what you'd bring to **one meeting with your mentor**:
