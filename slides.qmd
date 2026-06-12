@@ -563,13 +563,48 @@ Put in it what you'd tell a new lab member on day one:
 
 . . .
 
-Start with ten lines. It grows all summer — mostly via Part 5.
+Start with ten lines. How it grows is the interesting part →
 
 ::: {.notes}
 ~3 min. This is the payoff of the context-window slide: writing things down
 isn't bureaucracy, it's literally the only memory mechanism the agent has.
 Write it WITH the agent: "interview me about this project and draft an
 AGENTS.md" is a great first task.
+:::
+
+## Where the rules come from: something goes wrong *once*
+
+The habit: every time something goes wrong, don't just fix it —
+go to `AGENTS.md` and **encode the general version**, so the whole *category*
+can't happen again.
+
+. . .
+
+**✗** It analyzed `data_old.csv` — two similar files were sitting in the folder.
+
+> "Print the full path of every input actually loaded.
+> If several candidates exist, **stop and ask**."
+
+. . .
+
+**✗** The patient count quietly went 412 → 389 between runs (different missing-data handling).
+
+> "Report the **N after every filtering step**. Any change in counts
+> between runs must be **called out explicitly**."
+
+. . .
+
+**✗** The summary said *"works perfectly"* — over three unexamined warnings.
+
+> "Every report ends with a **remaining-uncertainty** section:
+> what was assumed, what wasn't checked."
+
+::: {.notes}
+~3 min. This is the single most important habit in the talk — say so. The
+fix-it-and-move-on instinct wastes the mistake; the rule turns it into
+permanent infrastructure. Note the shape: each rule is broader than the
+incident (not "don't load data_old.csv" but "name every input, always").
+Part 5 has the full worked example (the seed story) and names the pattern.
 :::
 
 ## Inside a real one: excerpts from my `AGENTS.md`
@@ -765,11 +800,14 @@ session reads it.
 
 ## The flywheel: every mistake becomes a rule
 
-You cannot list all the failure modes in advance. Don't try. Instead:
+You've seen this move twice now — the wrong-file rule, the seed rule.
+It's the same move every time:
 
 1. **Catch** a mistake (you will — that's what the auditing is for)
 2. Write the **general version** into `AGENTS.md`
 3. Every future session **inherits the rule**
+
+You cannot list all the failure modes in advance. Don't try — **harvest them**.
 
 . . .
 
@@ -777,9 +815,11 @@ By August your `AGENTS.md` is institutional memory —
 the thing real labs take years to build, growing weekly in your repo.
 
 ::: {.notes}
-~2 min. Reframes errors as compounding assets, and answers "the agent
-doesn't learn between sessions": right — so the learning lives in the repo.
-This flywheel is also exactly how labs onboard humans; the analogy holds.
+~2 min. Explicit callback to "Where the rules come from" in Part 4 — name
+it as the same single habit so it lands as one move, not two slides.
+Reframes errors as compounding assets, and answers "the agent doesn't
+learn between sessions": right — so the learning lives in the repo. This
+flywheel is also exactly how labs onboard humans; the analogy holds.
 :::
 
 ## Make auditing cheap
