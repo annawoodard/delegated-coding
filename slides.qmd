@@ -86,23 +86,29 @@ actually are, (2) what makes research different, (3) how to run the
 relationship.
 :::
 
-## First, the rule that outranks this talk {.center}
+## First, the rule that outranks this talk
 
-⚠️ **Talk to your mentor.**
+⚠️ **Talk to your mentor — in week 1, not week 9.** Five questions to ask:
 
-Every lab has its own expectations about AI use —
-for the code, the data, the writing.
-
-Have that conversation in **week 1**, not week 9.
+1. *"Are you OK with me using AI tools — and which ones, for what?"*
+   (code? analysis? writing?)
+2. *"What are the rules for our **data**? What can the tools see —
+   can they read the files, or only help me write code?"*
+3. *"How should I **disclose** AI use — in the code, the repo, the poster?"*
+4. *"How do you want to **review my work**, and how often?"*
+5. *"Is there anything in this project I should do **by hand because
+   I need to learn it**?"*
 
 . . .
 
 Nothing in the next hour overrides what your mentor tells you.
 
 ::: {.notes}
-~1 min. Deliver plainly — norms genuinely differ across labs, and students
-can't yet tell which norms are universal vs. lab-specific. This comes back
-on the Ground rules slide near the end.
+~2 min. Deliver plainly — norms genuinely differ across labs, and students
+can't yet tell which norms are universal vs. lab-specific. Question 5 is
+the one mentors will love them for asking; it also previews Part 6 (don't
+delegate the learning). The data question previews the Ground rules slide
+near the end, where this all comes back.
 :::
 
 # Part 1: What you're actually working with {background-color="#800000"}
