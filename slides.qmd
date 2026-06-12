@@ -655,9 +655,15 @@ AGENTS.md so it happens every session automatically.
 
 ## 5. Make every result auditable
 
-One experiment → **one directory** → one `README` recording how it was made:
+One experiment → **one directory** → one `README` recording how it was made.
 
-> the command · the config · the **input files** · the git state · how to **regenerate it**
+The rule from my own `AGENTS.md`, sized for a summer project — paste it into yours:
+
+> "Every new results directory must contain a `README.md` **before the result
+> is reported**. At the top: one line on **what this run tests**. Then enough
+> to rerun or audit it: the exact **command**, the **config**, the **input
+> files**, the **git commit**, and **how to regenerate it**. Add key plots
+> and numbers as they appear."
 
 . . .
 
@@ -669,13 +675,14 @@ what was tried, what failed, what we currently believe.
 Why: week-9 you, bug found, mentor asking "which version made this figure?" —
 this turns a crisis into a 10-minute rerun.
 
-Encode the convention in `AGENTS.md` so it happens **every time**.
-
 ::: {.notes}
 ~3 min. Connect to the Part 2 slide: you WILL redo everything. The agent
 does this bookkeeping happily and consistently — it costs you nothing after
-the convention is written down. This discipline is rare even among
-professional scientists; a student who has it stands out immediately.
+the rule is in AGENTS.md: from then on every result directory documents
+itself, and "reported as ready" is gated on the README existing. ("Before
+the result is reported" is the load-bearing phrase — it makes provenance
+part of the definition of done, not cleanup.) This discipline is rare even
+among professional scientists; a student who has it stands out immediately.
 :::
 
 ## 6. Maintain the workflow itself
