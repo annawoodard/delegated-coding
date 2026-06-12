@@ -47,7 +47,7 @@ the remaining lever is cutting "three generations", ~-2 min):
   ~9   part 3: the mental model
   ~13  part 4: running the lab
   ~9   part 5: when it goes wrong
-  ~6   part 6: the student catch
+  ~8   part 6: the student catch (incl. the jobs-anxiety slide)
   ~4   part 7: getting started + takeaways (+ ~5 min questions)
 
 NOTE: this comment must live INSIDE a slide (below a ## heading) — any
@@ -810,6 +810,36 @@ you don't know why, stop everything until you do.
 :::
 
 # Part 6: The student catch {background-color="#800000"}
+
+## "Is this thing going to take my job?"
+
+The oldest version of the honest answer — from radiology, 2017:
+
+![](figures/langlotz-2017-ai-radiologists-tweet.png){.nostretch width="42%" fig-align="center"}
+
+. . .
+
+> "AI won't take your job. It's somebody using AI that will take your job."
+> [— Richard Baldwin, economist, WEF 2023]{.smallgray}
+
+. . .
+
+**Becoming the somebody is what this summer is for.**
+
+::: {.notes}
+~2 min. Name the anxiety directly — they're all thinking it. Provenance
+note (and a live demo of the talk's thesis): this quote usually circulates
+attributed to Karpathy or Jensen Huang. We checked — there is NO primary
+source for a Karpathy version; it's a misattribution that *sounds right*.
+The oldest traceable ancestor is the Langlotz tweet shown (real, verified,
+Feb 2017); Baldwin said the general version at WEF in May 2023; Huang's
+famous variant came at Milken in 2025. If the room is engaged, say the
+meta-beat out loud: a confident, plausible, wrongly-attributed quote is
+exactly "sounds right vs. is right" — we verified it before putting it on
+a slide, which is the whole talk. Then land the sincere version: the
+premium moves to people who can delegate well and verify — Part 6 is about
+becoming that person rather than outsourcing your way around it.
+:::
 
 ## Don't delegate the learning
 
