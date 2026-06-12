@@ -67,13 +67,24 @@ wrong, that's on me, not the tool. That division of labor is the next hour.
 
 ## Why not call it "vibe coding"?
 
+::: {.columns}
+::: {.column width="52%"}
 *Vibe coding*: prompt, accept, run, hope.
 
-Fine for a throwaway script — not fine when someone has to **trust the result**.
+Fine for a throwaway script —
+not fine when someone has to
+**trust the result**.
 
 . . .
 
-*Delegated coding*: the AI does the work; **you stay in charge and accountable**.
+*Delegated coding*: the AI does
+the work; **you stay in charge
+and accountable**.
+:::
+::: {.column width="48%"}
+![](figures/karpathy_vibe_coding.png){width="100%"}
+:::
+:::
 
 . . .
 
@@ -81,7 +92,9 @@ The skill you'll need this summer is not prompting.
 It's **management**: scoping tasks, setting standards, reviewing the work.
 
 ::: {.notes}
-~3 min. Most of them have vibe-coded already — don't pretend otherwise.
+~3 min. The term is Andrej Karpathy's — the Feb 2025 tweet on the slide.
+Even the coiner scoped it to throwaway weekend projects.
+Most of them have vibe-coded already — don't pretend otherwise.
 The pitch: research raises the stakes — you, your mentor, eventually a
 reviewer have to trust the result, and vibes don't survive a methods
 section. "Managing your AI collaborators" is meant literally: by August
@@ -144,6 +157,15 @@ management, not menus.
 
 # Part 1: What you're actually working with {background-color="#800000"}
 
+![](figures/karpathy_english.png){.nostretch width="52%" fig-align="center"}
+
+::: {.notes}
+The beat: Karpathy again, two years *before* vibe coding — and by now it's
+roughly true. Which is exactly why it's worth one slide on what this
+"English programming language" actually compiles to. Don't read the tweet
+aloud; let it sit, then advance.
+:::
+
 ## Under the hood: a language model
 
 A large language model (LLM) is trained in two stages — neither objective is *"be correct"*:
@@ -162,8 +184,7 @@ Each stage leaves a fingerprint on the output:
 
 . . .
 
-Fluent and confident **by construction**, including when it's wrong:
-**"sounds right" and "is right" are different properties.** Hold onto that.
+Fluent and confident **by construction**, including when it's wrong.
 
 ::: {.notes}
 ~3 min. One slide of theory, no more. Stage 2 is RLHF — reinforcement
