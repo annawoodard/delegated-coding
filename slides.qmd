@@ -95,9 +95,10 @@ relationship.
 2. *"What are the rules for our **data**? What can the tools see —
    can they read the files, or only help me write code?"*
 3. *"How should I **disclose** AI use — in the code, the repo, the poster?"*
-4. *"How do you want to **review my work**, and how often?"*
-5. *"Is there anything in this project I should do **by hand because
-   I need to learn it**?"*
+4. *"Is there a **tool or account** the lab already uses or can give me
+   access to?"*
+5. *"By the end of the summer, **which parts of this project should I be
+   able to explain** entirely on my own?"*
 
 . . .
 
@@ -105,10 +106,12 @@ Nothing in the next hour overrides what your mentor tells you.
 
 ::: {.notes}
 ~2 min. Deliver plainly — norms genuinely differ across labs, and students
-can't yet tell which norms are universal vs. lab-specific. Question 5 is
-the one mentors will love them for asking; it also previews Part 6 (don't
-delegate the learning). The data question previews the Ground rules slide
-near the end, where this all comes back.
+can't yet tell which norms are universal vs. lab-specific. Question 4 is
+practical: lab/university accounts beat free tiers, and some labs have an
+approved-tools list. Question 5 is the one mentors will love them for
+asking — it defines the learning goals up front and previews Part 6 (the
+delegation boundary: you can only delegate what you could evaluate). The
+data question previews the Ground rules slide near the end.
 :::
 
 # Part 1: What you're actually working with {background-color="#800000"}
