@@ -1,0 +1,529 @@
+---
+title: "Delegated Coding"
+subtitle: "Managing your AI collaborators"
+author: "Anna Woodard"
+institute: "UChicago Data Science Institute · UChicago Medicine"
+date: 2026-06-18
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    width: 1280          # 16:9 widescreen (PowerPoint-shaped)
+    height: 720
+    slide-number: c/t       # current / total, e.g. 3/8
+    incremental: false
+    code-line-numbers: false
+    include-after-body: _logos.html   # both logos on every slide
+execute:
+  echo: false      # don't show code unless a slide asks for it
+  freeze: auto     # cache results so a rebuild doesn't recompute everything
+---
+
+<!--
+CHEAT SHEET (delete before presenting)
+
+Build:        quarto render slides.qmd          -> slides.html
+Live preview: quarto preview slides.qmd         -> auto-reloads in browser
+
+New slide:        start a line with "## Title"
+Section divider:  "# SECTION TITLE"
+Speaker notes:    ::: {.notes}  ... :::   (press 's' in browser for presenter view)
+Two columns:      ::: {.columns} / ::: {.column width="50%"} ... ::: / :::
+Incremental list: add {.incremental} after a "##" heading
+Fragment reveal:  add [text]{.fragment}
+
+TIMING PLAN (60 min total)
+  ~5   hook + reframe
+  ~3   what changed
+  ~10  mental model (PI / delegate-vs-own)
+  ~15  running the lab (workflow)
+  ~10  when it goes wrong
+  ~7   the student catch
+  ~5   getting started + takeaways
+  ~5   buffer / questions
+-->
+
+## Full disclosure {.center}
+
+This talk was prepared the way it recommends:
+
+I sketched the argument. My agent drafted the slides.
+
+**I own every claim on them.**
+
+::: {.notes}
+~1 min. Open with this — it's the whole talk in miniature. The agent did the
+typing; I did the thinking and the reviewing. If anything on these slides is
+wrong, that's on me, not the tool. That division of labor is the next hour.
+:::
+
+## Why not call it "vibe coding"?
+
+*Vibe coding*: prompt, accept, run, hope.
+
+- Fine for a throwaway script or a weekend toy
+- Not fine when someone — you, your mentor, a reviewer — has to **trust the result**
+
+. . .
+
+*Delegated coding*: the agent does the work; **you stay in charge and accountable**.
+
+. . .
+
+The skill you'll actually need is not prompting.
+It's **management**: scoping tasks, setting standards, reviewing evidence.
+
+::: {.notes}
+~4 min. The REU students have all vibe-coded already — don't pretend they
+haven't. The pitch: research raises the stakes. Vibes don't survive a
+methods section. "Managing your AI collaborators" is meant literally: by
+the end of the summer you'll supervise more code than you write.
+:::
+
+## What changed: the unit of delegation grew
+
+| Era | Tool | You delegate... |
+|---|---|---|
+| 2021 | autocomplete (Copilot) | a **line** |
+| 2023 | chat (ChatGPT) | a **function** you paste back |
+| now | agents (Claude Code, Codex, Cursor) | a **task** |
+
+. . .
+
+An agent reads your repo, edits files, **runs commands**, sees the errors,
+and iterates — for minutes to hours, without you watching.
+
+::: {.notes}
+~3 min. Key distinction for anyone who's only used the chat workflow: agents
+close the loop themselves. They run the code, read the traceback, fix it,
+rerun. That's why a "task" is now the unit — and why management, not
+prompting, is the skill. Live show of Claude Code here if time allows.
+:::
+
+# You are the PI {background-color="#800000"}
+
+## The mental model
+
+The agent is a fast, tireless, overconfident **junior collaborator**.
+
+A PI doesn't watch every line get typed. A PI owns:
+
+- the **question**
+- what **evidence** would answer it
+- what would **change our minds**
+- the **constraints** — data provenance, inclusion criteria, definitions of success
+
+. . .
+
+Agents map onto this surprisingly well. So does its failure mode:
+a student who never gets supervised produces work you can't trust.
+
+::: {.notes}
+~4 min. This is the load-bearing slide. Everything later — AGENTS.md as a
+lab manual, meeting-sized tasks, auditing — falls out of taking this
+analogy seriously. Also flag the asymmetry honestly: unlike a PhD student,
+the agent doesn't learn between sessions unless YOU write things down.
+That's foreshadowing for AGENTS.md.
+:::
+
+## The prompt shift
+
+::: {.columns}
+::: {.column width="42%"}
+**Micromanaging**
+
+> "Fix this line."
+
+> "Now change the axis label."
+
+> "No, the other axis."
+:::
+::: {.column width="58%"}
+**Delegating**
+
+> "Here is the **goal**, here is the repo, here is **what would convince me**.
+> Inspect first, propose a **plan**, implement the **smallest thing** that
+> answers the question, run a **reproducible check**, and tell me
+> **what changed**."
+:::
+:::
+
+. . .
+
+You don't have to watch every line —
+but you **do** have to review the scientific logic and the outputs.
+
+::: {.notes}
+~3 min. This was the single biggest shift in my own usage. The delegating
+prompt is doing five jobs: goal, context, acceptance criteria, process
+(inspect → plan → implement → verify), and a reporting requirement. Students
+can copy this template verbatim.
+:::
+
+## What to delegate, what to own
+
+::: {.columns}
+::: {.column width="50%"}
+**Delegate** — implementation & mechanical investigation
+
+- "make this faster"
+- "write a parser for this format"
+- "turn this notebook into a script"
+- "find why this Slurm job failed"
+- "summarize missingness by cohort"
+- "compare these two result folders"
+:::
+::: {.column width="50%"}
+**Own** — question, design, interpretation
+
+- "is this result *real*?"
+- "is this comparison *fair*?"
+- "does this prove the *mechanism*?"
+- "what should we try *next*?"
+
+For these, use the agent as a
+**skeptical assistant**, not the
+decision-maker.
+:::
+:::
+
+::: {.notes}
+~3 min. Rough rule worth saying out loud: if the task has a checkable "done",
+delegate it. If the task IS the judgment, keep it. You can still ask the
+agent to argue both sides of an interpretation — that's using it as a
+skeptic, which is different from letting it decide.
+:::
+
+# Running the lab {background-color="#800000"}
+
+## 1. Put the project in git
+
+Non-negotiable, and not just for the usual reasons:
+
+- the agent will **edit your files and run commands** — git is the undo button
+- cheap checkpoints: commit before every delegated task
+- the diff **is** your review surface: `git diff` shows exactly what your collaborator did
+
+. . .
+
+Bonus: agents are very good at writing commit messages — make them.
+
+::: {.notes}
+~2 min. For students who treat git as a chore: reframe it as the supervision
+tool. You review an agent the way you review a pull request. No git, no diff,
+no review, no trust.
+:::
+
+## 2. Write the onboarding doc: `AGENTS.md`
+
+Everything you'd tell a new lab member on day one, in the repo root:
+
+- how to set up the **environment**
+- **where the data lives** (and what must never be touched)
+- what counts as a **valid result**
+- output and naming **conventions**
+
+. . .
+
+The agent reads it automatically at the start of every session.
+
+**Write it once → stop re-explaining your project every morning.**
+
+::: {.notes}
+~3 min. Claude Code reads CLAUDE.md / AGENTS.md conventions automatically;
+Cursor and Codex have equivalents. Start small — ten lines is fine — it
+grows over the summer. The growth mechanism is the audit-rule flywheel,
+coming up in the failure-modes section.
+:::
+
+## 3. Give meeting-sized tasks
+
+One task ≈ what you'd bring to one meeting with your mentor:
+
+- "make this plot reproducible from this CSV"
+- "turn this notebook cell into a script with arguments"
+- "find why this job failed and summarize the fix"
+
+. . .
+
+Not: *"build my whole analysis pipeline"*
+
+- too big to review ⇒ you **can't** stay accountable
+- start where you already know what **"done" looks like**
+
+::: {.notes}
+~2 min. Task size is the main control knob you have. Too small = you're
+micromanaging and gaining nothing. Too big = the review burden exceeds your
+ability to verify, and you've silently handed over ownership. Meeting-sized
+is the sweet spot: big enough to delegate, small enough to audit.
+:::
+
+## 4. Demand the full loop
+
+Ask for **inspect → plan → implement → verify**, not just code.
+
+A good session ends with a report:
+
+1. the **commands** that were run
+2. the **artifacts** produced
+3. **what changed**
+4. the **remaining uncertainty**
+
+. . .
+
+If the agent can't tell you these four things, the task isn't done.
+
+::: {.notes}
+~3 min. "Remaining uncertainty" is the item students will skip and the one
+that matters most. An agent that says "done, all tests pass" is less useful
+than one that says "done, but I assumed the date column is UTC — check
+that." You can literally put this four-item report format in AGENTS.md.
+:::
+
+## 5. Make every result auditable
+
+One experiment → **one directory** → one `README` recording provenance:
+
+> command · config · inputs · git state · environment · parameters · **how to regenerate**
+
+. . .
+
+Plus a **lab notebook** the agent maintains:
+what was tried, what failed, what we currently believe.
+
+. . .
+
+Encode all of it in `AGENTS.md` — so it happens **every time**, not just when you remember.
+
+::: {.notes}
+~3 min. Sell the selfish benefit: resuming after a week away. "What is this
+folder? Which run made this figure?" disappears as a category of problem.
+And the agent does the bookkeeping — this convention costs you nothing once
+it's written down.
+:::
+
+## 6. Maintain the workflow itself
+
+Agent work accumulates **slop**: duplicated scripts, dead code, stale instructions.
+
+Every few sessions, delegate a hygiene pass:
+
+> "Read `AGENTS.md` and the recent lab-notebook entries. Identify instructions
+> that are outdated, ambiguous, duplicated, or missing based on recent
+> failures. Propose a shorter, cleaner version before editing."
+
+. . .
+
+Rule for hygiene passes: **no change to scientific behavior** —
+only make the next experiment easier to audit and rerun.
+
+::: {.notes}
+~2 min. Treat the workflow as something you maintain, not something you set
+up once. This is also a nice example of delegating meta-work: the agent
+cleaning up after the agent.
+:::
+
+# When it goes wrong {background-color="#800000"}
+
+## It will be wrong in ways that *look* right
+
+The dangerous failures don't throw errors:
+
+- cohort definitions or **denominators silently change** between runs
+- it grabs the **wrong version of a file** when several exist
+- runs look independent but **share an assumption** — fake stability
+- summaries sound **more confident than the evidence supports**
+
+. . .
+
+**Reviewing code is not enough.**
+If reading code caught everything, there would never be bugs in code.
+
+::: {.notes}
+~3 min. This is the section that earns the talk its keep. The code reads
+fine, the plot renders, the numbers are plausible — and the result is wrong.
+Every one of these four is a failure I have actually seen. Slow down here.
+:::
+
+## Case study: the seed that didn't vary
+
+I asked for an experiment to be rerun **three times** to check stability.
+
+The agent reran it three times — **with the same random seed**.
+
+Three matching results. Zero independent evidence. *Looked great.*
+
+. . .
+
+The fix wasn't "be more careful." It was a new rule in `AGENTS.md`:
+
+> "Before running comparisons or repeats, define **what is supposed to vary**
+> and **what is supposed to stay fixed**. After running, **audit the run
+> metadata** to verify the intended variables changed and the controlled
+> ones didn't."
+
+::: {.notes}
+~3 min. Tell this as a story, not a bullet list. Point out the shape of the
+fix: not a one-off correction, but the GENERAL version of the mistake,
+written down where every future session sees it.
+:::
+
+## The flywheel: mistakes → audit rules
+
+You will not list every possible failure in advance. Don't try.
+
+Instead:
+
+1. **Catch** a mistake (you will)
+2. Write down the **general version** as a rule in `AGENTS.md`
+3. Every future session inherits it
+
+. . .
+
+Your `AGENTS.md` becomes the lab's institutional memory —
+the thing a real research group takes **years** to build.
+
+::: {.notes}
+~2 min. This reframes errors as compounding assets. It's also the answer to
+"the agent doesn't learn between sessions": correct — so the learning has to
+live in the repo, and this is the mechanism.
+:::
+
+## Make auditing cheap
+
+The catch with working at a higher level: it's easy to miss details.
+
+The answer is **not** micromanagement — it's a small set of artifacts you always inspect:
+
+- the final **figure or table**
+- the **command** that made it
+- the **inputs actually loaded** and the **cohort counts**
+- config **differences between runs** · seeds / splits / folds
+- a short note: **what changed, what's uncertain**
+
+. . .
+
+Five minutes of auditing per task. That's the whole price of staying in charge.
+
+::: {.notes}
+~2 min. The checklist is deliberately short — if auditing is expensive,
+students will skip it. Counts are the highest-value check per second spent:
+if N changed and you don't know why, stop.
+:::
+
+# The student catch {background-color="#800000"}
+
+## Don't delegate the learning
+
+The PI model has a prerequisite: **the PI knows the field.**
+
+You're here this summer to *become* someone who can supervise —
+and you can only delegate what you could **evaluate yourself**.
+
+. . .
+
+- It makes a competent person **faster**
+- It makes a confused person **more confidently wrong**
+
+. . .
+
+If you couldn't judge whether the output is right, that task wasn't yours to delegate yet.
+
+::: {.notes}
+~3 min. The honest tension in this talk: I'm teaching delegation to people
+whose actual job is learning. Resolution: the delegation boundary moves as
+you grow. Week 1 it's small; by August it's most of the implementation. The
+skill of KNOWING where your boundary is — that's the real takeaway.
+:::
+
+## Make it a tutor, not a vending machine
+
+Don't only ask for code. Ask:
+
+- *"Why this approach over the alternatives?"*
+- *"What could go wrong here?"*
+- *"What would break if my data looked different?"*
+- *"Explain this diff like I'm reviewing it."*
+
+. . .
+
+You have unlimited access to a patient explainer with no ego.
+**For a student, the explanation is worth more than the code.**
+
+::: {.notes}
+~2 min. This is how delegation and learning coexist: every delegated task is
+also a tutoring opportunity if you ask the follow-ups. Reading the agent's
+diffs critically teaches code review faster than writing code alone ever did.
+:::
+
+## Verify on something you can check
+
+Before trusting it on the case you can't check,
+run it on a tiny case where you **already know the answer**.
+
+. . .
+
+Right on the known case → it has *earned some* trust on the unknown one.
+
+. . .
+
+One more thing, because we're at a medical campus:
+your **prompt and code** go to a company's servers — your **data doesn't have to**.
+Never point a cloud tool at patient data or anything covered by a DUA. Ask first.
+
+::: {.notes}
+~2 min. The known-answer check is the single most transferable habit in the
+talk — it's just science. The data note: one slide, said plainly, not a
+lecture. "Help me write the code" is fine; "here's the dataset, analyze it"
+is the thing you never do with sensitive data. When unsure, ask your mentor.
+:::
+
+# Getting started {background-color="#800000"}
+
+## Your first delegated task — this week
+
+Pick a **small, annoying, real** task in your own project:
+
+1. `git init` (or commit), write a 10-line `AGENTS.md`
+2. Delegate the task end-to-end: goal, context, what would convince you
+3. Require the report: commands · artifacts · what changed · uncertainty
+4. Audit it: inputs, counts, the diff
+5. First mistake you catch → first rule in your `AGENTS.md`
+
+. . .
+
+Don't start with the open-ended project.
+**Start where you already know what "done" looks like.**
+
+::: {.notes}
+~2 min. Skip the hunt for the perfect tutorial — skim one tool guide and
+learn by doing. Tool guides: code.claude.com/docs/en/best-practices,
+platform.openai.com/docs/codex, docs.cursor.com/agent/modes. (Say these are
+linked on the resources slide / will be shared with the deck.)
+:::
+
+## Resources
+
+- **Claude Code** — [code.claude.com/docs/en/best-practices](https://code.claude.com/docs/en/best-practices)
+- **Codex** — [platform.openai.com/docs/codex](https://platform.openai.com/docs/codex)
+- **Cursor** — [docs.cursor.com/agent/modes](https://docs.cursor.com/agent/modes)
+
+. . .
+
+Don't hunt for the one perfect tutorial.
+Skim a guide for whichever tool you have access to, then **learn on a real task**.
+
+## If you remember three things
+
+1. **You are the PI.** Delegate implementation; own the question, the design, and the interpretation.
+2. **Write it down once.** `AGENTS.md`, provenance, lab notebook — and turn every caught mistake into an audit rule.
+3. **Trust is earned by verification.** Check the counts, the inputs, the diffs — and verify on a case you already know.
+
+. . .
+
+Questions?
+
+::: {.notes}
+Leave ~5 min. If one question to seed: "what's the smallest task in your
+project you could delegate tomorrow — and how would you know if it came back
+wrong?"
+:::

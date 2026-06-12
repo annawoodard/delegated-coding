@@ -1,0 +1,79 @@
+/*-- scss:defaults --*/
+// UChicago maroon
+$presentation-heading-color: #800000;
+$link-color: #800000;
+$presentation-heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/*-- scss:rules --*/
+
+// Tighten code blocks a touch for slides
+.reveal pre code {
+  font-size: 0.8em;
+  line-height: 1.3;
+}
+
+// Persistent logo BAR — full-width strip along the bottom of every slide
+// (markup in _logos.html). White bar keeps both logos legible on white AND
+// maroon backgrounds; maroon top border ties it to the theme.
+#deck-logos {
+  box-sizing: border-box;           // keep padding INSIDE the 100% width
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   // UCM far left, DSI far right
+  padding: 0 32px;
+  background: #fff;
+  border-top: 3px solid #800000;
+  pointer-events: none;
+}
+#deck-logos img {
+  height: 38px;
+  max-width: 300px;
+  object-fit: contain;
+  display: block;
+}
+
+// --- Slide number, interactive (live reveal.js) -------------------------------
+// In the live deck there's no fixed-element print quirk, so the number sits
+// centered ON the white bar. Content is "c/t" (e.g. 3 / 13).
+.reveal .slide-number,
+.reveal aside.slide-number {
+  font-size: 26px !important;
+  font-weight: 600;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  color: #800000 !important;
+  background: transparent !important;
+  left: 50% !important;
+  right: auto !important;
+  bottom: 14px !important;
+  transform: translateX(-50%) !important;
+  z-index: 70 !important;
+}
+
+// --- Slide number, PDF export -------------------------------------------------
+// reveal swaps to a per-page `.slide-number-pdf` element in print. Make each
+// `.pdf-page` its containing block, then center the number ON the redrawn bar
+// (the white print bar lives in _logos.html as `.pdf-page::after`, z-index 40).
+.reveal .pdf-page { position: relative !important; }
+.reveal .slide-number-pdf {
+  display: block !important;
+  visibility: visible !important;
+  position: absolute !important;
+  font-size: 22px !important;
+  font-weight: 600;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  color: #800000 !important;
+  background: transparent !important;
+  left: 50% !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: 18px !important;          // vertically centered on the 64px bar
+  transform: translateX(-50%) !important;
+  z-index: 70 !important;           // above the print bar (40)
+}

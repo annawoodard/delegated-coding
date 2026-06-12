@@ -1,0 +1,26 @@
+<div id="deck-logos">
+  <img src="logos/uchicago_medicine.png" alt="UChicago Medicine">
+  <img src="logos/dsi.svg" alt="UChicago Data Science Institute">
+</div>
+
+<style>
+/* PDF export only: Chrome paints the position:fixed bar (#deck-logos) ABOVE all
+   page content on every printed page, so a per-page slide number placed on it is
+   invisible. In print we therefore hide the fixed bar and redraw an identical bar
+   as page CONTENT on each .pdf-page — now the number (also page content) can sit
+   ON it. Paths below resolve against slides.html, so they're correct. */
+html.print-pdf #deck-logos { display: none !important; }
+html.print-pdf .pdf-page::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 64px;
+  background-color: #fff;
+  background-image: url("logos/uchicago_medicine.png"), url("logos/dsi.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 32px center, right 32px center;
+  background-size: auto 38px, auto 38px;
+  border-top: 3px solid #800000;
+  z-index: 40;
+}
+</style>
