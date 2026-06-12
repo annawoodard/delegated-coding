@@ -33,17 +33,21 @@ Two columns:      ::: {.columns} / ::: {.column width="50%"} ... ::: / :::
 Incremental list: add {.incremental} after a "##" heading
 Fragment reveal:  add [text]{.fragment}
 
-STATUS: long "everything in" version for trimming later.
-Rough timing if delivered as-is (~70 min — over budget on purpose):
+STATUS: first trim pass done (cut: both-sides segue [merged into mental
+model], workflow-maintenance slide, resources slide [links now a footer on
+the takeaways slide]). Rough timing (~65 min — still ~5-10 over if Q&A
+stays inside the hour):
   ~5   hook + reframe
   ~15  part 1: what you're working with (LLMs, agents, harnesses)
-  ~7   part 2: research is a different game
-  ~8   part 3: the mental model
-  ~15  part 4: running the lab
+  ~5   part 2: research is a different game
+  ~9   part 3: the mental model
+  ~13  part 4: running the lab
   ~10  part 5: when it goes wrong
   ~7   part 6: the student catch
-  ~5   part 7: getting started + takeaways
-Trim candidates marked [TRIM?] in slide notes.
+  ~4   part 7: getting started + takeaways (+ ~5 min questions)
+Next trim candidates if a dry run confirms it's over: "You've probably met
+three generations of this" (part 1) and "What a session actually looks
+like" (part 1) — both are color, not load-bearing.
 
 NOTE: this comment must live INSIDE a slide (below a ## heading) — any
 content before the first heading becomes a blank slide in reveal.js.
@@ -394,29 +398,6 @@ rerunning everything after a bug fix is a near certainty. This sets up the
 provenance material in Part 4 so it lands as "obviously necessary."
 :::
 
-## This summer you're on both sides of the same relationship
-
-Your **mentor** will manage *you*:
-
-give you scoped tasks, point you at context, set standards for evidence,
-review your work — without watching you type.
-
-. . .
-
-You will manage your **agent** the same way.
-
-. . .
-
-Good news: you get to watch the management pattern from the inside —
-notice what good delegation feels like from below, then apply it from above.
-
-::: {.notes}
-~2 min. The segue slide. The PI/student analogy lands differently with
-undergrads than with faculty — they're the junior party in their own
-research relationship right now, which makes the pattern very concrete.
-[TRIM?] — could merge into the next slide if time pressure demands.
-:::
-
 # Part 3: You are the PI {background-color="#800000"}
 
 ## The mental model
@@ -433,12 +414,19 @@ A PI doesn't watch every line get typed. A PI owns:
 
 . . .
 
+Sound familiar? It's how your **mentor** will manage *you* this summer —
+watch what good delegation feels like from below, then apply it from above.
+
+. . .
+
 One difference from a real student: the agent **doesn't learn between
 sessions** unless *you* write the lessons down.
 
 ::: {.notes}
-~3 min. The load-bearing slide. Everything in Part 4 — instruction files,
+~4 min. The load-bearing slide. Everything in Part 4 — instruction files,
 task sizing, auditing — falls out of taking this analogy seriously. The
+mentor line is the absorbed segue slide: they're the junior party in their
+own research relationship right now, which makes the pattern concrete. The
 "doesn't learn unless you write it down" caveat connects back to the
 context-window slide and forward to AGENTS.md.
 :::
@@ -753,28 +741,6 @@ part of the definition of done, not cleanup.) This discipline is rare even
 among professional scientists; a student who has it stands out immediately.
 :::
 
-## 6. Maintain the workflow itself
-
-Weeks of agent work accumulate **slop**: duplicate scripts, dead code,
-stale instructions, three versions of the same plot function.
-
-Every week or two, delegate a cleanup pass:
-
-> "Read `AGENTS.md` and the recent lab-notebook entries. Find instructions
-> that are outdated, duplicated, or missing given recent failures.
-> Propose a shorter, cleaner version before editing anything."
-
-. . .
-
-Ground rule for cleanup passes: **results must not change** —
-only make the next experiment easier to run and audit.
-
-::: {.notes}
-~2 min. [TRIM?] if running long — but it's a nice beat: the agent cleaning
-up after the agent, and "treat the workflow as something you maintain, not
-something you set up once."
-:::
-
 # Part 5: When it goes wrong {background-color="#800000"}
 
 ## It will be wrong in ways that *look* right
@@ -983,23 +949,6 @@ Don't start with the big open-ended project.
 the hour was worth it.
 :::
 
-## Resources
-
-- **Claude Code** — [code.claude.com/docs/en/best-practices](https://code.claude.com/docs/en/best-practices)
-- **Codex** — [platform.openai.com/docs/codex](https://platform.openai.com/docs/codex)
-- **Cursor** — [docs.cursor.com/agent/modes](https://docs.cursor.com/agent/modes)
-
-. . .
-
-Don't hunt for the one perfect tutorial.
-Skim the guide for whichever tool you can get access to, then **learn on a real task**.
-
-::: {.notes}
-[TRIM?] Could be a QR code / link on the takeaways slide instead. Check
-what tool access REU students actually have (free tiers, edu programs)
-and mention it here.
-:::
-
 ## If you remember three things
 
 1. **You are the PI.** Delegate implementation; own the question, the design, and the interpretation.
@@ -1010,8 +959,15 @@ and mention it here.
 
 Questions?
 
+[Guides — don't hunt for the perfect tutorial; skim one of these, then learn on a real task:
+[Claude Code](https://code.claude.com/docs/en/best-practices) ·
+[Codex](https://platform.openai.com/docs/codex) ·
+[Cursor](https://docs.cursor.com/agent/modes)]{style="font-size:0.55em; color:#667;"}
+
 ::: {.notes}
 Leave ~5 min. Seed question if the room is quiet: "What's the smallest task
 in your project you could delegate tomorrow — and how would you know if it
 came back wrong?"
+TODO (Anna): check what tool access the REU students actually have
+(free tiers / edu programs) and say it out loud here.
 :::
