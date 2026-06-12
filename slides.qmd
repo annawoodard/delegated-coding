@@ -33,21 +33,22 @@ Two columns:      ::: {.columns} / ::: {.column width="50%"} ... ::: / :::
 Incremental list: add {.incremental} after a "##" heading
 Fragment reveal:  add [text]{.fragment}
 
-STATUS: first trim pass done (cut: both-sides segue [merged into mental
-model], resources slide [links now a footer on the takeaways slide];
-workflow-maintenance slide kept by request). Rough timing (~67 min —
-still ~7-12 over if Q&A stays inside the hour):
+STATUS: second trim pass done. Cut/merged: harness slide (now a fragment
+on the agent slide), session transcript (live demo covers it; restore from
+git if not demoing), "what your summer produces" (folded into the
+coursework slide), flywheel (folded into the seed story), third
+where-rules example, "norms vary" ground rule, various line-level
+tightening. Kept by request: workflow-maintenance slide, three-generations
+slide. Rough timing (~58-60 min — fits the hour if Q&A can spill a little;
+the remaining lever is cutting "three generations", ~-2 min):
   ~5   hook + reframe
-  ~15  part 1: what you're working with (LLMs, agents, harnesses)
-  ~5   part 2: research is a different game
+  ~11  part 1: what you're working with (LLMs, agents, harnesses)
+  ~4   part 2: research is a different game
   ~9   part 3: the mental model
-  ~15  part 4: running the lab
-  ~10  part 5: when it goes wrong
-  ~7   part 6: the student catch
+  ~13  part 4: running the lab
+  ~9   part 5: when it goes wrong
+  ~6   part 6: the student catch
   ~4   part 7: getting started + takeaways (+ ~5 min questions)
-Next trim candidates if a dry run confirms it's over: "You've probably met
-three generations of this" (part 1) and "What a session actually looks
-like" (part 1) — both are color, not load-bearing.
 
 NOTE: this comment must live INSIDE a slide (below a ## heading) — any
 content before the first heading becomes a blank slide in reveal.js.
@@ -105,14 +106,13 @@ relationship.
 
 ## First, the rule that outranks this talk
 
-⚠️ **Talk to your mentor — in week 1, not week 9.** Four questions to ask:
+⚠️ **Talk to your mentor — in week 1, not week 9.** Three questions to ask:
 
 1. *"Are you OK with me using AI tools — and which ones, for what?"*
    (code? analysis? writing?)
-2. *"What are the rules for our **data**? What can the tools see —
-   can they read the files, or only help me write code?"*
-3. *"How should I **disclose** AI use — in the code, the repo, the poster?"*
-4. *"By the end of the summer, **which parts of this project should I be
+2. *"What are the rules for our **data** — what can the tools see? —
+   and how should I **disclose** AI use (code, repo, poster)?"*
+3. *"By the end of the summer, **which parts of this project should I be
    able to explain** entirely on my own?"*
 
 . . .
@@ -121,11 +121,11 @@ Nothing in the next hour overrides what your mentor tells you.
 
 ::: {.notes}
 ~2 min. Deliver plainly — norms genuinely differ across labs, and students
-can't yet tell which norms are universal vs. lab-specific. Question 4 is
-the one mentors will love them for asking — it defines the learning goals
-up front and previews Part 6 (the delegation boundary: you can only
-delegate what you could evaluate). The data question previews the Ground
-rules slide near the end.
+can't yet tell which norms are universal vs. lab-specific. The last
+question is the one mentors will love them for asking — it defines the
+learning goals up front and previews Part 6 (the delegation boundary: you
+can only delegate what you could evaluate). The data question previews the
+Ground rules slide near the end.
 :::
 
 ## What this hour is — and isn't
@@ -242,67 +242,22 @@ An agent = a language model + **tools** + a **loop**.
 The loop is the big deal: it runs your code, **reads its own error messages,
 and fixes them** — for minutes to hours, without you watching.
 
+. . .
+
+One word you'll hear: the program wrapped around the model — **Claude Code**,
+**Cursor**, **Codex** — is called the **harness**. It supplies the tools and the rules.
+Use whichever you can get: the *management skills* transfer across all of them.
+
 ::: {.notes}
-~3 min. The chat workflow makes YOU the loop: paste error, get fix, paste
+~4 min. The chat workflow makes YOU the loop: paste error, get fix, paste
 next error. An agent closes that loop itself. That's why the unit of
 delegation jumps from "function" to "task" — and why management, not
-prompting, becomes the skill.
-:::
-
-## The word you'll hear: "harness"
-
-The **harness** is the program wrapped around the model — it's what gives
-the model its tools and decides what it's allowed to do.
-
-- **Claude Code**, **Codex CLI** — live in your terminal
-- **Cursor**, **VS Code + Copilot agent mode** — live in your editor
-
-. . .
-
-Same idea, different skins. The harness controls:
-
-- what the agent can **see** (your files, your repo, the web)
-- what it can **do** (edit, run commands) and **what needs your permission**
-- what project instructions it **reads automatically** (more on this soon)
-
-. . .
-
-You'll pick one and learn it in an afternoon. The *management skills* transfer across all of them.
-
-::: {.notes}
-~2 min. Demystify the tool zoo: model = the brain, harness = the body and
-the rules. Don't agonize over which one; use whatever you have access to.
-The permission point matters: a good harness asks before running risky
-commands — read those prompts, don't reflexively hit yes.
-:::
-
-## What a session actually looks like
-
-```text
-You:    My plotting script crashes on the new data file.
-        Find out why and fix it. Don't change what the plot shows.
-
-Agent:  Reading plot_results.py and the traceback...
-        Ran it: KeyError on column 'patient_id'.
-        The new CSV uses 'subject_id' instead. Two options:
-        (a) rename at load time, (b) accept both. I suggest (b).
-        Proceed?
-
-You:    Yes.
-
-Agent:  Edited load_data() to accept either name. Reran the
-        script — plot renders, 412 rows, same as the old file.
-        One thing to check: 3 rows have empty subject_id.
-        I left them in. Want me to look into those?
-```
-
-::: {.notes}
-~3 min. Walk through what just happened: it ran the code, diagnosed,
-proposed options BEFORE changing anything, verified after, and flagged an
-anomaly it wasn't asked about. That's a good session. Also point at the
-last two lines — "3 rows have empty subject_id" — THAT is the kind of
-detail that turns out to matter in research, and a big theme later.
-This is also the natural spot for a 5-10 min live demo if running one.
+prompting, becomes the skill. On harnesses: model = the brain, harness =
+the body and the rules — it decides what the agent can see and do, what
+needs your permission (read those prompts, don't reflexively hit yes), and
+what project instructions it reads automatically (foreshadows AGENTS.md).
+Don't agonize over which one. If running a live demo, this is the natural
+spot for it.
 :::
 
 ## One more concept: the context window
@@ -394,33 +349,22 @@ them. The split previews the delegate-vs-own boundary in Part 3.
 In class, AI mistakes cost you points. In research, they become
 **wrong conclusions** — and nothing catches them but you.
 
+. . .
+
+And you'll **redo everything** — so every result must be **regenerable by a command**, not from memory.
+
 ::: {.notes}
-~3 min. For students who've never done research, this is the most important
+~4 min. For students who've never done research, this is the most important
 context in the talk. There is no answer key. A bug that crashes is a good
 bug — it announces itself. The dangerous bug runs clean and quietly changes
 the result. That's why "it works" means something different from here on.
-:::
-
-## What your summer actually produces
-
-A typical REU arc:
-
-**question → data → experiments → figures → poster/report**
-
-. . .
-
-Two things about this pipeline that change how you should code:
-
-- **You'll redo everything.** The data gets updated, a bug gets found in week 8,
-  your mentor asks "what if we exclude those samples?" — every result must be
-  **reproducible**: regenerable from scratch by a command, not by memory.
-- **Every figure is a claim.** Someone will ask exactly how it was made.
-  "The AI did it" is not an answer you can give at a poster session.
-
-::: {.notes}
-~2 min. Reproducibility isn't an ideal here, it's self-defense — week-9-you
-rerunning everything after a bug fix is a near certainty. This sets up the
-provenance material in Part 4 so it lands as "obviously necessary."
+The redo line — give the examples aloud: the data gets updated, a bug
+turns up in week 8, the mentor asks "what if we exclude those samples?"
+Reproducibility isn't an ideal here, it's self-defense —
+week-9-you rerunning everything after a bug fix is a near certainty; it
+sets up the provenance material in Part 4 so it lands as "obviously
+necessary." (Absorbed from the cut "what your summer produces" slide; the
+"every figure is a claim" point now lives on Ground rules.)
 :::
 
 # Part 3: You are the PI {background-color="#800000"}
@@ -605,18 +549,14 @@ can't happen again.
 > "Report the **N after every filtering step**. Any change in counts
 > between runs must be **called out explicitly**."
 
-. . .
-
-**✗** The summary said *"works perfectly"* — over three unexamined warnings.
-
-> "Every report ends with a **remaining-uncertainty** section:
-> what was assumed, what wasn't checked."
-
 ::: {.notes}
-~3 min. This is the single most important habit in the talk — say so. The
+~2 min. This is the single most important habit in the talk — say so. The
 fix-it-and-move-on instinct wastes the mistake; the rule turns it into
 permanent infrastructure. Note the shape: each rule is broader than the
 incident (not "don't load data_old.csv" but "name every input, always").
+A third example, cut for time: summary said "works perfectly" over three
+unexamined warnings → "every report ends with a remaining-uncertainty
+section" — that idea gets its own slide ("Demand the full loop").
 Part 5 has the full worked example (the seed story) and names the pattern.
 :::
 
@@ -661,10 +601,8 @@ task matches — works in Claude Code, Cursor, Codex, and Gemini CLI.
 We've published ours — a year of research-agent judgment, free to install:
 [**github.com/uchicago-dsi/ai-sci-skills**](https://github.com/uchicago-dsi/ai-sci-skills)
 
-- `$experiment-design` — propose the **smallest experiment that changes a decision**
 - `$sensemaking` — check whether a finding **makes sense before trusting it**
 - `$skeptical-labmate` — **stress-test** claims, baselines, and follow-up plans
-- `$rut-breaker` — detect **low-yield loops** and force a better reset move
 - `$lab-notebook` / `$handoff` — keep records **restartable and auditable**
 
 . . .
@@ -678,8 +616,10 @@ projects — notice the table is this talk in tool form (smallest decisive
 experiment, skepticism before trust, auditable records). Install = clone
 the repo and copy/symlink the folders into the agent's skills directory
 (~/.claude/skills, ~/.cursor/skills, ...); README has per-tool commands.
-Also in the repo: $slurm and $job-babysitting for cluster work — relevant
-to anyone whose REU project touches the RCC clusters. Keep shared skills
+Also in the repo (cut from the slide for time): $experiment-design
+(smallest experiment that changes a decision), $rut-breaker (detect
+low-yield loops), and $slurm / $job-babysitting for cluster work —
+relevant to anyone whose REU project touches the RCC clusters. Keep shared skills
 generic; project facts stay in AGENTS.md.
 :::
 
@@ -697,10 +637,6 @@ Too small — "fix this line" — you're micromanaging; you gained nothing.
 
 Too big — "build my whole analysis pipeline" — **you can't review what comes
 back**, so you've silently handed over ownership.
-
-. . .
-
-Start where you already know what **"done" looks like**.
 
 ::: {.notes}
 ~2 min. Task size is the main control knob they have. The "too big" failure
@@ -836,36 +772,20 @@ The fix wasn't "be more careful." It was a new rule written into `AGENTS.md`:
 > and **what must stay fixed** — and afterwards, **check the run records**
 > to confirm it."
 
+. . .
+
+You can't list the failure modes in advance — **harvest them**.
+By August, your `AGENTS.md` is institutional memory.
+
 ::: {.notes}
-~3 min. Tell it as a story. Note for the room: the agent didn't disobey — it
+~4 min. Tell it as a story. Note for the room: the agent didn't disobey — it
 did the literal thing asked. "Rerun three times" was underspecified, and the
 gap got filled with the wrong default. Then point at the *shape* of the fix:
 not a one-off correction but the general rule, written where every future
-session reads it.
-:::
-
-## The flywheel: every mistake becomes a rule
-
-You've seen this move twice now — the wrong-file rule, the seed rule.
-It's the same move every time:
-
-1. **Catch** a mistake (you will — that's what the auditing is for)
-2. Write the **general version** into `AGENTS.md`
-3. Every future session **inherits the rule**
-
-You cannot list all the failure modes in advance. Don't try — **harvest them**.
-
-. . .
-
-By August your `AGENTS.md` is institutional memory —
-the thing real labs take years to build, growing weekly in your repo.
-
-::: {.notes}
-~2 min. Explicit callback to "Where the rules come from" in Part 4 — name
-it as the same single habit so it lands as one move, not two slides.
-Reframes errors as compounding assets, and answers "the agent doesn't
-learn between sessions": right — so the learning lives in the repo. This
-flywheel is also exactly how labs onboard humans; the analogy holds.
+session reads it — the same move as "Where the rules come from" in Part 4;
+name it as one habit. The harvest line reframes errors as compounding
+assets, and answers "the agent doesn't learn between sessions": right — so
+the learning lives in the repo, the thing real labs take years to build.
 :::
 
 ## Make auditing cheap
@@ -874,8 +794,8 @@ Working at a higher level means it's easy to miss details.
 The fix is **not** micromanagement — it's a short checklist you *always* run:
 
 - the final **figure or table** — does it pass a smell test?
-- the **command** that made it — could you rerun it?
-- the **inputs actually loaded** and the **row counts** — did N change? why?
+- the **command**, the **inputs actually loaded**, the **row counts** —
+  could you rerun it? did N change? why?
 - **what differs between runs** — seeds, configs, data versions
 - the report's **uncertainty note** — does the language outrun the evidence?
 
@@ -962,8 +882,6 @@ version of a unit test, and agents are great at generating it for you.
   servers; your data doesn't have to. Never point a cloud tool at patient
   data, regulated data, or anything under a data-use agreement. **When in
   doubt, ask your mentor first.**
-- **Norms vary — ask.** Every lab and program has its own expectations about
-  AI use. One conversation in week 1 beats one awkward conversation in week 9.
 - **You own what you submit.** On your poster, in your report, in the repo:
   every line is yours, whoever typed it. "The AI did it" is never an excuse.
 
