@@ -34,14 +34,14 @@ Incremental list: add {.incremental} after a "##" heading
 Fragment reveal:  add [text]{.fragment}
 
 STATUS: first trim pass done (cut: both-sides segue [merged into mental
-model], workflow-maintenance slide, resources slide [links now a footer on
-the takeaways slide]). Rough timing (~65 min — still ~5-10 over if Q&A
-stays inside the hour):
+model], resources slide [links now a footer on the takeaways slide];
+workflow-maintenance slide kept by request). Rough timing (~67 min —
+still ~7-12 over if Q&A stays inside the hour):
   ~5   hook + reframe
   ~15  part 1: what you're working with (LLMs, agents, harnesses)
   ~5   part 2: research is a different game
   ~9   part 3: the mental model
-  ~13  part 4: running the lab
+  ~15  part 4: running the lab
   ~10  part 5: when it goes wrong
   ~7   part 6: the student catch
   ~4   part 7: getting started + takeaways (+ ~5 min questions)
@@ -739,6 +739,28 @@ itself, and "reported as ready" is gated on the README existing. ("Before
 the result is reported" is the load-bearing phrase — it makes provenance
 part of the definition of done, not cleanup.) This discipline is rare even
 among professional scientists; a student who has it stands out immediately.
+:::
+
+## 6. Maintain the workflow itself
+
+Weeks of agent work accumulate **slop**: duplicate scripts, dead code,
+stale instructions, three versions of the same plot function.
+
+Every week or two, delegate a cleanup pass:
+
+> "Read `AGENTS.md` and the recent lab-notebook entries. Find instructions
+> that are outdated, duplicated, or missing given recent failures.
+> Propose a shorter, cleaner version before editing anything."
+
+. . .
+
+Ground rule for cleanup passes: **results must not change** —
+only make the next experiment easier to run and audit.
+
+::: {.notes}
+~2 min. A nice beat: the agent cleaning up after the agent, and "treat the
+workflow as something you maintain, not something you set up once."
+(Was a trim candidate; Anna wants it kept.)
 :::
 
 # Part 5: When it goes wrong {background-color="#800000"}
