@@ -18,6 +18,8 @@ execute:
   freeze: auto     # cache results so a rebuild doesn't recompute everything
 ---
 
+## Full disclosure {.center}
+
 <!--
 CHEAT SHEET (delete before presenting)
 
@@ -42,9 +44,10 @@ Rough timing if delivered as-is (~70 min — over budget on purpose):
   ~7   part 6: the student catch
   ~5   part 7: getting started + takeaways
 Trim candidates marked [TRIM?] in slide notes.
--->
 
-## Full disclosure {.center}
+NOTE: this comment must live INSIDE a slide (below a ## heading) — any
+content before the first heading becomes a blank slide in reveal.js.
+-->
 
 This talk was prepared the way it recommends:
 
@@ -74,11 +77,21 @@ wrong, that's on me, not the tool. That division of labor is the next hour.
 The skill you'll need this summer is not prompting.
 It's **management**: scoping tasks, setting standards, reviewing the work.
 
+. . .
+
+⚠️ **Before any of this: talk to your mentor.** Every lab has its own
+expectations about AI use — for the code, the data, the writing.
+Have that conversation in **week 1**, not week 9. Nothing in this talk
+overrides what your mentor tells you.
+
 ::: {.notes}
 ~4 min. Most of them have vibe-coded already — don't pretend otherwise.
 The pitch: research raises the stakes. Vibes don't survive a methods
 section. "Managing your AI collaborators" is meant literally: by August
-you'll supervise more code than you write. Today: (1) what these tools
+you'll supervise more code than you write. Deliver the mentor caveat
+plainly and early — norms genuinely differ across labs, and students
+can't yet tell which norms are universal vs. lab-specific. It comes back
+on the Ground rules slide near the end. Today: (1) what these tools
 actually are, (2) what makes research different, (3) how to run the
 relationship.
 :::
