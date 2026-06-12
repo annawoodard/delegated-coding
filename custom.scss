@@ -4,13 +4,45 @@ $presentation-heading-color: #800000;
 $link-color: #800000;
 $presentation-heading-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+// Dense deck: quarto's 40px default overflows the 720px canvas (and the
+// bottom 64px is covered by the logo bar). Smaller root + tighter headings.
+$presentation-font-size-root: 30px;
+$presentation-h2-font-size: 1.35em;
+$presentation-line-height: 1.4;
+
 /*-- scss:rules --*/
 
-// Tighten code blocks a touch for slides
-.reveal pre code {
-  font-size: 0.8em;
-  line-height: 1.3;
+// Code blocks: reveal's default shrinks pre to 0.55em, which is unreadably
+// small at this root size — scale back up.
+.reveal pre {
+  font-size: 0.75em;
+  line-height: 1.35;
+  width: 95%;
 }
+.reveal pre code {
+  font-size: 1em;
+  line-height: 1.35;
+  max-height: none;
+}
+
+// Dense-deck spacing: tighter vertical rhythm so packed slides stay above
+// the logo bar. Keep the bottom 70px clear of content (bar height + border).
+.reveal .slides section {
+  padding-bottom: 70px;
+  box-sizing: border-box;
+}
+.reveal h2 { margin-bottom: 0.5em; }
+.reveal p { margin: 0.45em 0; }
+.reveal ul, .reveal ol { margin: 0.3em 0 0.3em 1em; }
+.reveal li { margin: 0.18em 0; }
+.reveal li > ul, .reveal li > ol { margin-top: 0.1em; margin-bottom: 0.1em; }
+.reveal blockquote {
+  margin: 0.5em auto;
+  padding: 0.3em 0.8em;
+  font-size: 0.95em;
+}
+.reveal table { font-size: 0.9em; }
+.reveal table th, .reveal table td { padding: 0.3em 0.6em; }
 
 // Persistent logo BAR — full-width strip along the bottom of every slide
 // (markup in _logos.html). White bar keeps both logos legible on white AND
