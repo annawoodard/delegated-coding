@@ -41,6 +41,13 @@ $presentation-line-height: 1.4;
   padding: 0.3em 0.8em;
   font-size: 0.95em;
 }
+
+// Small gray annotation, e.g. the "what this rule prevents" glosses on
+// the AGENTS.md-excerpts slide: [— gloss]{.smallgray}
+.reveal .smallgray {
+  font-size: 0.78em;
+  color: #6b6b6b;
+}
 .reveal table { font-size: 0.9em; }
 .reveal table th, .reveal table td { padding: 0.3em 0.6em; }
 

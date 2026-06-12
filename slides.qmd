@@ -572,6 +572,36 @@ Write it WITH the agent: "interview me about this project and draft an
 AGENTS.md" is a great first task.
 :::
 
+## Inside a real one: excerpts from my `AGENTS.md`
+
+> "Fail fast. No silent fallbacks, no hidden defaults."
+> [— errors should surface, not quietly corrupt results]{.smallgray}
+
+> "Do not call something an A/B test unless **only one knob changed**."
+> [— guards every comparison I'll ever be shown]{.smallgray}
+
+> "Do not retroactively edit configs for completed runs."
+> [— the record must match what actually ran]{.smallgray}
+
+> "Every new run directory must contain a `README` provenance note
+> **before the run is reported as ready**."
+> [— auditability isn't optional, it's the definition of done]{.smallgray}
+
+> "Never write patient-data images to `/tmp` or shared temp directories."
+> [— the data rules, encoded once, enforced every session]{.smallgray}
+
+::: {.notes}
+~3 min. These are real, lightly trimmed. The full file is ~100 rules grown
+over a year on one project — and nearly every rule is a scar: something
+went wrong once, I caught it, and the general version went in the file
+(the flywheel, Part 5). Another favorite, cut for space: "When comparing
+runs, state the shared setup and the differing knob before giving the
+takeaway" — reports arrive in reviewable form. Point out the range: code
+standards, comparison hygiene, provenance, data safety — one file governs
+all of it, and the agent reads it every single session. Theirs starts at
+ten lines; this is what it compounds into.
+:::
+
 ## 3. Give meeting-sized tasks
 
 One task ≈ what you'd bring to **one meeting with your mentor**:
