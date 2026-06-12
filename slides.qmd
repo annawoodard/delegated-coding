@@ -57,7 +57,7 @@ This talk was prepared the way it recommends:
 
 I sketched the argument. My AI agent drafted the slides.
 
-**I own every claim on them.**
+**I own all the claims.**
 
 ::: {.notes}
 ~1 min. Open with this — it's the whole talk in miniature. The agent did the
@@ -146,28 +146,32 @@ management, not menus.
 
 ## Under the hood: a language model
 
-A large language model (LLM) is trained on a huge amount of text and code
-to do one thing: **predict what comes next**.
+A large language model (LLM) is trained in two stages — neither objective is *"be correct"*:
 
-That single trick, at scale, gets you something that can write working code,
-explain errors, and follow instructions.
-
-. . .
-
-But the training objective has consequences:
-
-- it produces what's **plausible**, which usually — not always — matches what's **true**
-- it's **fluent and confident by construction**, including when it's wrong
-- it has no built-in signal for *"I don't actually know this"*
+1. **Predict what comes next**, over a huge amount of text and code —
+   where it learns to write code, explain errors, follow instructions.
+2. **Satisfy human raters.** People compare candidate answers; the model is
+   tuned toward the ones people prefer.
 
 . . .
 
-**"Sounds right" and "is right" are different properties.** Hold onto that.
+Each stage leaves a fingerprint on the output:
+
+- stage 1 rewards the **plausible** — which usually, *not always*, matches the **true**
+- stage 2 rewards what **readers like**: confident, agreeable, rarely *"I don't know"*
+
+. . .
+
+Fluent and confident **by construction**, including when it's wrong:
+**"sounds right" and "is right" are different properties.** Hold onto that.
 
 ::: {.notes}
-~3 min. One slide of theory, no more. The point isn't how transformers work —
-it's that confidence is part of the output style, not evidence of
-correctness. Everything in Part 5 traces back to this slide.
+~3 min. One slide of theory, no more. Stage 2 is RLHF — reinforcement
+learning from human feedback — say the name once, don't dwell. The framing
+that lands: the model was trained to make the reader happy, not to be
+right; when those conflict you get confident nonsense and yes-and
+agreement (sycophancy). So confidence is part of the output style, not
+evidence of correctness. Everything in Part 5 traces back to this slide.
 :::
 
 ## You've probably met three generations of this
