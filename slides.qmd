@@ -88,16 +88,14 @@ relationship.
 
 ## First, the rule that outranks this talk
 
-⚠️ **Talk to your mentor — in week 1, not week 9.** Five questions to ask:
+⚠️ **Talk to your mentor — in week 1, not week 9.** Four questions to ask:
 
 1. *"Are you OK with me using AI tools — and which ones, for what?"*
    (code? analysis? writing?)
 2. *"What are the rules for our **data**? What can the tools see —
    can they read the files, or only help me write code?"*
 3. *"How should I **disclose** AI use — in the code, the repo, the poster?"*
-4. *"Is there a **tool or account** the lab already uses or can give me
-   access to?"*
-5. *"By the end of the summer, **which parts of this project should I be
+4. *"By the end of the summer, **which parts of this project should I be
    able to explain** entirely on my own?"*
 
 . . .
@@ -107,11 +105,37 @@ Nothing in the next hour overrides what your mentor tells you.
 ::: {.notes}
 ~2 min. Deliver plainly — norms genuinely differ across labs, and students
 can't yet tell which norms are universal vs. lab-specific. Question 4 is
-practical: lab/university accounts beat free tiers, and some labs have an
-approved-tools list. Question 5 is the one mentors will love them for
-asking — it defines the learning goals up front and previews Part 6 (the
-delegation boundary: you can only delegate what you could evaluate). The
-data question previews the Ground rules slide near the end.
+the one mentors will love them for asking — it defines the learning goals
+up front and previews Part 6 (the delegation boundary: you can only
+delegate what you could evaluate). The data question previews the Ground
+rules slide near the end.
+:::
+
+## What this hour is — and isn't
+
+This is **not a how-to workshop**. No tool walkthrough, no syntax, no setup guide.
+
+. . .
+
+Why: for any *"how do I…?"* question, your best teacher is **the agent itself** —
+
+- it knows the current version of the tool (these change *monthly*; slides don't)
+- it answers *your* question, on *your* project, at the moment you're stuck
+- asking it **is** the practice — the best way to learn this is to do it
+
+. . .
+
+What an hour *can* give you is the part the agent won't:
+**judgment** — what to delegate, what to demand back, what to check, what to own.
+
+::: {.notes}
+~2 min. Sets expectations and is itself the first lesson: "ask the agent"
+is not a cop-out, it's the actual skill. Literal first prompts they can use:
+"I've never used Claude Code — set yourself up in this project and show me
+the basics" or "teach me enough git to work with you safely." Then the
+honest framing for the hour: mechanics are cheap and self-teachable now;
+judgment is what's scarce. That's why the rest of the talk is about
+management, not menus.
 :::
 
 # Part 1: What you're actually working with {background-color="#800000"}
