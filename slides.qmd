@@ -65,8 +65,7 @@ wrong, that's on me, not the tool. That division of labor is the next hour.
 
 *Vibe coding*: prompt, accept, run, hope.
 
-- Fine for a throwaway script or a weekend project
-- Not fine when someone — you, your mentor, eventually a reviewer — has to **trust the result**
+Fine for a throwaway script — not fine when someone has to **trust the result**.
 
 . . .
 
@@ -77,23 +76,33 @@ wrong, that's on me, not the tool. That division of labor is the next hour.
 The skill you'll need this summer is not prompting.
 It's **management**: scoping tasks, setting standards, reviewing the work.
 
-. . .
-
-⚠️ **Before any of this: talk to your mentor.** Every lab has its own
-expectations about AI use — for the code, the data, the writing.
-Have that conversation in **week 1**, not week 9. Nothing in this talk
-overrides what your mentor tells you.
-
 ::: {.notes}
-~4 min. Most of them have vibe-coded already — don't pretend otherwise.
-The pitch: research raises the stakes. Vibes don't survive a methods
+~3 min. Most of them have vibe-coded already — don't pretend otherwise.
+The pitch: research raises the stakes — you, your mentor, eventually a
+reviewer have to trust the result, and vibes don't survive a methods
 section. "Managing your AI collaborators" is meant literally: by August
-you'll supervise more code than you write. Deliver the mentor caveat
-plainly and early — norms genuinely differ across labs, and students
-can't yet tell which norms are universal vs. lab-specific. It comes back
-on the Ground rules slide near the end. Today: (1) what these tools
+you'll supervise more code than you write. Today: (1) what these tools
 actually are, (2) what makes research different, (3) how to run the
 relationship.
+:::
+
+## First, the rule that outranks this talk {.center}
+
+⚠️ **Talk to your mentor.**
+
+Every lab has its own expectations about AI use —
+for the code, the data, the writing.
+
+Have that conversation in **week 1**, not week 9.
+
+. . .
+
+Nothing in the next hour overrides what your mentor tells you.
+
+::: {.notes}
+~1 min. Deliver plainly — norms genuinely differ across labs, and students
+can't yet tell which norms are universal vs. lab-specific. This comes back
+on the Ground rules slide near the end.
 :::
 
 # Part 1: What you're actually working with {background-color="#800000"}
