@@ -45,7 +45,7 @@ the remaining lever is cutting "three generations", ~-2 min):
   ~11  part 1: what you're working with (LLMs, agents, harnesses)
   ~4   part 2: research is a different game
   ~9   part 3: the mental model
-  ~13  part 4: running the lab
+  ~16  part 4: running the lab (now 7 practices: added "give it a checkable target")
   ~9   part 5: when it goes wrong
   ~8   part 6: the student catch (incl. the jobs-anxiety slide)
   ~4   part 7: getting started + takeaways (+ ~5 min questions)
@@ -670,7 +670,66 @@ overconfidence (slide: under the hood). Put this four-item report format in
 AGENTS.md so it happens every session automatically.
 :::
 
-## 5. Make every result auditable
+## 5. Give it a target it can check itself
+
+You say it's wrong. It tries again. Still wrong. You correct it again —
+**you've become the test**, grading every attempt by hand, one round at a time.
+
+. . .
+
+The fix isn't a sharper correction. It's a **check the agent can run without
+you** — then: *"keep iterating until it passes."*
+
+::: {.columns}
+::: {.column width="50%"}
+**Free** — it already loops on these:
+
+- a crash → the **stack trace**
+- a failing **test** or **type error**
+- a **linter** complaint
+:::
+::: {.column width="50%"}
+**You have to build these:**
+
+- "rows must still sum to N" → an **assertion**
+- "match this hand-checked case" → a **diff**
+- "accuracy > 0.9 on held-out data" → a **metric**
+:::
+:::
+
+. . .
+
+Now **the agent** iterates, not you — you set the bar **once**.
+[*Not a new gadget: it's the agent-loop from Part 1 pointed at a finish line you drew. And only when "right" is checkable — when it isn't, that's the judgment you own.*]{.smallgray}
+
+::: {.notes}
+~3 min. THE distinction to make out loud, because students conflate them:
+the "loop" from Part 1 is what makes an agent an agent (look → act → observe
+→ repeat). This slide is NOT a second kind of loop — it's that same loop
+with a *finish line you supply*. So I'm not naming a new mechanism; the
+thing worth naming is the **check** (the target), not the loop.
+
+The trigger to teach: the moment you catch yourself correcting the *same
+class of thing* more than once or twice, stop — that's the signal to build a
+check instead of refereeing another round. You are a slow, expensive,
+inconsistent error message; an assertion is instant and never gets tired.
+
+Free vs. build is the user's key point: for a crash the agent already has
+the signal (the stack trace) and will grind on it autonomously for ages.
+For "is this result right?" there is no built-in signal — you manufacture
+one: an assertion, a diff against output you verified by hand, a metric on
+held-out data, a synthetic case with a known answer (callback to "verify on
+something you can check," Part 6). This is the executable version of "what
+would convince me" from the prompt-shift slide.
+
+The guardrail reconciles with the coursework slide ("in research YOU are the
+checker") and delegate-vs-own: you build autograders for the *checkable
+sub-tasks* and hand off the iteration; the final claim has no autograder, so
+that judgment stays yours. Don't let "iterate until it passes" become
+"optimize until the metric is gamed" — eyeball the result too.
+:::
+
+## 6. Make every result auditable
 
 One experiment → **one directory** → one `README` recording how it was made.
 
@@ -702,7 +761,7 @@ part of the definition of done, not cleanup.) This discipline is rare even
 among professional scientists; a student who has it stands out immediately.
 :::
 
-## 6. Maintain the workflow itself
+## 7. Maintain the workflow itself
 
 Weeks of agent work accumulate **slop**: duplicate scripts, dead code,
 stale instructions, three versions of the same plot function.
