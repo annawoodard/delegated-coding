@@ -185,7 +185,7 @@ Each stage leaves a fingerprint on the output:
 . . .
 
 Newer models are better calibrated — they push back and say *"I'm not sure"*
-more than they used to. But tone was never the signal: **fluent and confident
+more than they used to. But: **fluent and confident
 ≠ correct** — least of all on *your* data and code, which it can't verify alone.
 
 ::: {.notes}
@@ -300,33 +300,42 @@ feels inevitable rather than like arbitrary best practices.
 ::: {.column width="50%"}
 **Strong — often better than you'd expect**
 
-- boilerplate, glue code, file wrangling
-- debugging from a stack trace
-- using an unfamiliar library correctly
-- notebook → clean script
-- explaining someone else's code
-- writing tests, plots, parsers
+- changes across **many files**, not just snippets
+- a bug **end to end**: reproduce → hypothesize → fix
+- picking up an **unfamiliar codebase** fast
+- messy notebook → clean, **reproducible** script
+- the tedious-but-defined: **parsers, plots, tests, wrangling**
+- explaining code it **didn't write**
 :::
 ::: {.column width="50%"}
 **Weak — exactly where research lives**
 
-- knowing your **intent**
-- knowing your **data's quirks**
-- saying **"I'm not sure"**
-- judging if a result **makes sense**
-- novel methods with no precedent in its training data
+- your **intent** — what you didn't say
+- your **data's quirks**
+- what it **doesn't know** about *your* problem
+- whether a result **makes sense**
+- genuinely **novel** methods, no precedent to copy
 :::
 :::
 
 . . .
 
-The strong column is most of the hours you'd spend coding this summer.
-The weak column is the part that was always your job.
+The strong column is most of your coding hours this summer — **and it keeps growing.**
+The weak column was always your job — and **stays** yours: it's about *your* context, not the model's horsepower.
 
 ::: {.notes}
 ~2 min. Honest calibration in both directions: students who've only used
-free chatbots underestimate agents; students who've seen demos overestimate
-them. The split previews the delegate-vs-own boundary in Part 3.
+free chatbots underestimate agents; students who've seen one demo
+overestimate them. Note the strong column is deliberately *task-scale*, not
+snippet-scale — that's the whole point of the agent era and it's how the
+rest of the talk treats the tool (you delegate tasks, not lines). The weak
+column is reframed off "it can't say 'I'm not sure'" (it can now — see the
+under-the-hood slide) and onto the durable gap: it can't know the unknowns
+specific to *your* problem, or check against ground truth it can't see. The
+load-bearing move is the closing line: don't memorize today's strong list,
+it's a moving target — anchor on the weak axis, which is stable because
+it's about your context, not capability. That sets up delegate-vs-own
+(Part 3) and "the boundary moves as you learn" (Part 6).
 :::
 
 # Part 2: Research is a different game {background-color="#800000"}
