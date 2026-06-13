@@ -106,7 +106,7 @@ relationship.
 
 ## First, the rule that outranks this talk
 
-⚠️ **Talk to your mentor — in week 1, not week 9.** Three questions to ask:
+⚠️ **Talk to your mentor — in week 1, not week 7.** Three questions to ask:
 
 1. *"Are you OK with me using AI tools — and which ones, for what?"*
    (code? analysis? writing?)
@@ -180,19 +180,29 @@ A large language model (LLM) is trained in two stages — neither objective is *
 Each stage leaves a fingerprint on the output:
 
 - stage 1 rewards the **plausible** — which usually, *not always*, matches the **true**
-- stage 2 rewards what **readers like**: confident, agreeable, rarely *"I don't know"*
+- stage 2 rewards what **readers approve of** — a pull toward **confident, fluent, agreeable**
 
 . . .
 
-Fluent and confident **by construction**, including when it's wrong.
+Newer models are better calibrated — they push back and say *"I'm not sure"*
+more than they used to. But tone was never the signal: **fluent and confident
+≠ correct** — least of all on *your* data and code, which it can't verify alone.
 
 ::: {.notes}
 ~3 min. One slide of theory, no more. Stage 2 is RLHF — reinforcement
 learning from human feedback — say the name once, don't dwell. The framing
-that lands: the model was trained to make the reader happy, not to be
-right; when those conflict you get confident nonsense and yes-and
-agreement (sycophancy). So confidence is part of the output style, not
-evidence of correctness. Everything in Part 5 traces back to this slide.
+that lands: the model was trained to make the reader happy, not strictly to
+be right; preference training pulls toward agreement and confidence
+(sycophancy). Be honest that this has measurably improved — recent models
+are better calibrated, push back, and say "I'm not sure" more often — so
+don't overclaim, or a student who's watched it disagree with them tunes you
+out. The durable point isn't "it always caves"; it's that tone is not
+evidence — fluent confidence, and confabulation about things it can't
+verify (your data, your code, your file paths), are still real and are the
+more dangerous failure. (Aside if asked: post-training increasingly rewards
+*verifiable* correctness too — tests pass, math checks — the training-side
+mirror of the checkable-target practice in Part 4.) Everything in Part 5
+traces back to this slide.
 :::
 
 ## You've probably met three generations of this
@@ -276,7 +286,7 @@ Three consequences you'll feel immediately:
 . . .
 
 So anything you want it to know *every time* has to be **written down in the
-project**. That's not a workaround — that's the system. (Part 4.)
+project**. (Part 4.)
 
 ::: {.notes}
 ~2 min. This is the mechanical fact that motivates half the workflow advice
@@ -359,9 +369,9 @@ context in the talk. There is no answer key. A bug that crashes is a good
 bug — it announces itself. The dangerous bug runs clean and quietly changes
 the result. That's why "it works" means something different from here on.
 The redo line — give the examples aloud: the data gets updated, a bug
-turns up in week 8, the mentor asks "what if we exclude those samples?"
+turns up in week 7, the mentor asks "what if we exclude those samples?"
 Reproducibility isn't an ideal here, it's self-defense —
-week-9-you rerunning everything after a bug fix is a near certainty; it
+week-7-you rerunning everything after a bug fix is a near certainty; it
 sets up the provenance material in Part 4 so it lands as "obviously
 necessary." (Absorbed from the cut "what your summer produces" slide; the
 "every figure is a claim" point now lives on Ground rules.)
@@ -748,7 +758,7 @@ what was tried, what failed, what we currently believe.
 
 . . .
 
-Why: week-9 you, bug found, mentor asking "which version made this figure?" —
+Why: week-7 you, bug found, mentor asking "which version made this figure?" —
 this turns a crisis into a 10-minute rerun.
 
 ::: {.notes}
