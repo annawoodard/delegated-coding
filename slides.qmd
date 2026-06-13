@@ -45,7 +45,7 @@ the remaining lever is cutting "three generations", ~-2 min):
   ~11  part 1: what you're working with (LLMs, agents, harnesses)
   ~4   part 2: research is a different game
   ~9   part 3: the mental model
-  ~16  part 4: running the lab (now 7 practices: added "give it a checkable target")
+  ~18  part 4: running the lab (8 practices: added checkable-target + lab-notebook)
   ~9   part 5: when it goes wrong
   ~8   part 6: the student catch (incl. the jobs-anxiety slide)
   ~4   part 7: getting started + takeaways (+ ~5 min questions)
@@ -302,10 +302,10 @@ feels inevitable rather than like arbitrary best practices.
 
 - changes across **many files**, not just snippets
 - a bug **end to end**: reproduce → hypothesize → fix
-- picking up an **unfamiliar codebase** fast
+- learning an **unfamiliar codebase** and explaining it back
 - messy notebook → clean, **reproducible** script
 - the tedious-but-defined: **parsers, plots, tests, wrangling**
-- explaining code it **didn't write**
+- wiring up **cluster jobs** (SLURM)
 :::
 ::: {.column width="50%"}
 **Weak — exactly where research lives**
@@ -750,7 +750,7 @@ that judgment stays yours. Don't let "iterate until it passes" become
 
 ## 6. Make every result auditable
 
-One experiment → **one directory** → one `README` recording how it was made.
+One experiment → **one config** → **one directory** → a `README` of how it was made.
 
 The rule from my own `AGENTS.md`, sized for a summer project — paste it into yours:
 
@@ -762,8 +762,9 @@ The rule from my own `AGENTS.md`, sized for a summer project — paste it into y
 
 . . .
 
-Plus a **lab notebook** the agent maintains as it works:
-what was tried, what failed, what we currently believe.
+On the cluster this is where it pays off: the agent writes the **SLURM** script,
+launches the run, and drops it in its own provenance'd directory —
+**dozens of experiments, each self-documenting**, while you do something else.
 
 . . .
 
@@ -776,11 +777,48 @@ does this bookkeeping happily and consistently — it costs you nothing after
 the rule is in AGENTS.md: from then on every result directory documents
 itself, and "reported as ready" is gated on the README existing. ("Before
 the result is reported" is the load-bearing phrase — it makes provenance
-part of the definition of done, not cleanup.) This discipline is rare even
-among professional scientists; a student who has it stands out immediately.
+part of the definition of done, not cleanup.) The HPC line is the exciting
+one for this audience: the agent can run a whole campaign on the RCC cluster
+— write the submit script, launch, babysit the queue, pull results back —
+each run landing in its own config'd, README'd directory. That's the
+$slurm / $job-babysitting skills from the skills slide. This discipline is
+rare even among professional scientists; a student who has it stands out.
 :::
 
-## 7. Maintain the workflow itself
+## 7. Make it keep the lab notebook
+
+Two records, easy to confuse — you want **both**:
+
+- a run's **README** = how *one* experiment was made *(provenance)*
+- the **lab notebook** = the *thread across all of them* *(the story)*
+
+. . .
+
+One rule in `AGENTS.md`, and the agent keeps the notebook as it works:
+
+> "After each experiment, append to `LAB_NOTEBOOK.md`: what you tried, the
+> result, and what it changes about **what we believe** and **try next**."
+
+. . .
+
+The agent has **no memory between sessions** — the notebook is how the next
+session (and the next *you*) picks up the thread. By August it's your
+**poster outline** and your **handoff doc**, written as you went.
+
+::: {.notes}
+~2 min. The distinction is the teaching point: the README answers "how do I
+reproduce run #14?"; the notebook answers "what have we learned, and what
+should we try next?" Students conflate them and end up with neither. The
+notebook is the direct answer to the context-window slide — the agent wakes
+up empty every session, so the running record IS its memory; "read the lab
+notebook and the last three result READMEs" is a great session-opener
+prompt. Mine doubles as the skeleton of every update I send collaborators
+and, eventually, the poster. Packaged as the $lab-notebook / $handoff
+skills. Keep it append-only and dated; let it grow, prune it on the
+maintenance pass (next slide).
+:::
+
+## 8. Maintain the workflow itself
 
 Weeks of agent work accumulate **slop**: duplicate scripts, dead code,
 stale instructions, three versions of the same plot function.
