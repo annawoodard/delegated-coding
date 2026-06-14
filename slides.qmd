@@ -985,13 +985,17 @@ don't crash — they run clean and lie quietly:
 
 . . .
 
-**Reading the code is not enough** — you have to check the **outputs**.
+Don't go hunting in the code — these surface only in the **outputs**: the
+**counts**, the **file actually loaded**, the **config**, the **summary's wording**.
 
 ::: {.notes}
 ~3 min. The section that earns the talk its keep — slow down. Every one of
-these four is a failure mode I have actually hit. Each is invisible in a
-quick code skim and visible in the outputs: row counts, file paths actually
-loaded, configs, the wording of summaries.
+these four is a failure mode I have actually hit. The point (Anna's): don't
+counsel them to read the code — you probably won't, and these bugs aren't IN
+the code anyway, they're in what it produced. Each maps to a check: rows →
+counts; wrong file → the path actually loaded; hidden assumption → the
+config; overconfident summary → the wording. That's the make-auditing-cheap
+checklist two slides on.
 :::
 
 ## Case study: the seed that didn't vary
@@ -1155,7 +1159,6 @@ run it on a small case where you **already know the answer**.
 . . .
 
 Right on the known case → it has *earned* some trust on the unknown one.
-That's not an AI trick. **That's just science.**
 
 ::: {.notes}
 ~2 min. The single most transferable habit in the talk — it outlives any
