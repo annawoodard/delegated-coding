@@ -666,23 +666,25 @@ Part 5 has the full worked example (the seed story) and names the pattern.
 > **before the run is reported as ready**."
 > [— auditability isn't optional, it's the definition of done]{.smallgray}
 
-> "Retrieval can find a passage — it is **not evidence**."
-> [— read the source yourself before you cite it]{.smallgray}
+> "Preserve unknown values as `null`. **Never invent one.**"
+> [— don't let it paper over what it doesn't know]{.smallgray}
 
-> "For every source, note what it **does not prove**."
-> [— the caution has to travel with the claim]{.smallgray}
+> "**Dry-run** on a handful of cases before the full dataset."
+> [— rehearse where a mistake is cheap]{.smallgray}
 
 ::: {.notes}
-~3 min. These are real, lightly trimmed — pulled from my radiogenomics
-agents (the imaging pipeline and the review-article repo). Nearly every
-rule is a scar: something went wrong once, I caught it, and the general
-version went in the file (the flywheel, Part 5). Point out the range — code
-hygiene, comparison hygiene, provenance, verifying sources, refusing to
-overclaim — and that the last two ARE this whole talk in two lines: a
-retrieved passage isn't evidence, and every claim carries what it doesn't
-prove (callback to the under-the-hood and remaining-uncertainty slides). The
-agent reads all of it every single session. Theirs starts at ten lines;
-this is what it compounds into.
+~3 min. These are real, lightly trimmed. Nearly every rule is a scar:
+something went wrong once, I caught it, and the general version went in the
+file (the flywheel, Part 5). Point out the range — code hygiene, comparison
+hygiene, provenance, never fabricating a value, testing small before you
+trust. Worth saying out loud: the last two come from DIFFERENT agents (the
+"never invent" rule from my personal wellness-tracker, the dry-run rule from
+the imaging pipeline) — the same disciplines recur across totally unrelated
+projects, which is the point. They're also this talk in two lines: don't let
+it paper over what it doesn't know (under-the-hood slide), and rehearse where
+a mistake is cheap (verify on a case you can check, Part 6). The agent reads
+all of it every single session. Theirs starts at ten lines; this is what it
+compounds into.
 :::
 
 ## When a lesson outgrows the project: **skills**
