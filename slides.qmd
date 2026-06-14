@@ -288,12 +288,17 @@ Three consequences you'll feel immediately:
 . . .
 
 So anything you want it to know *every time* has to be **written down in the
-project**. (Part 4.)
+project**. That's not a workaround — it's *the* system. The single most
+important habit in this talk falls straight out of it: in Part 4, the agent
+keeps a **lab notebook**.
 
 ::: {.notes}
 ~2 min. This is the mechanical fact that motivates half the workflow advice
 later (AGENTS.md, lab notebook, provenance files). Frame it now so Part 4
-feels inevitable rather than like arbitrary best practices.
+feels inevitable. The new last line is a deliberate plant: name the lab
+notebook here as the payoff, so when it arrives in Part 4 it lands as "the
+thing he promised" rather than one practice among many. (It's Anna's #1
+slide — see its DO-NOT-CUT note.)
 :::
 
 ## What it's genuinely good and bad at
@@ -819,7 +824,39 @@ notebook and the last three result READMEs" is a great session-opener
 prompt. Mine doubles as the skeleton of every update I send collaborators
 and, eventually, the poster. Packaged as the $lab-notebook / $handoff
 skills. Keep it append-only and dated; let it grow, prune it on the
-maintenance pass (next slide).
+maintenance pass.
+:::
+
+## Inside a real one: a `LAB_NOTEBOOK.md` entry
+
+One dated, append-only entry — what the agent appends after a run:
+
+```text
+## 2026-07-14
+Tried:    logistic baseline, cleaned cohort (n=412) → AUC 0.71
+          provenance: results/2026-07-14_logit/
+Surprise: 23 rows dropped for missing subject_id —
+          ask mentor: excludable, or a merge bug?
+Believe:  signal real but weak — features are the bottleneck, not the model
+Next:     add the lab values Dr. K mentioned; re-run before the GNN
+```
+
+. . .
+
+Every entry, the same four moves:
+**what I tried · what surprised me · what I now believe · what's next.**
+
+::: {.notes}
+~2 min. Make it concrete — read the entry aloud; THIS is what "the learning
+lives in the repo" actually looks like. Three things to point at: (1) the
+**Tried** line links straight to the run's README — notebook and provenance
+(practice 6) interlock. (2) The **Surprise** line is the gold: an anomaly
+the agent flagged becomes a mentor question becomes a rule — the flywheel in
+one line. (3) **Believe / Next** is what students skip and exactly what lets
+August-you write the poster without reconstructing the summer from memory.
+Put the four-move format in AGENTS.md so every entry has the same shape.
+This is the companion to the AGENTS.md "Inside a real one" slide, and it's
+the second half of Anna's #1 idea — give it the time.
 :::
 
 ## 8. Maintain the workflow itself
@@ -1104,7 +1141,7 @@ the hour was worth it.
 ## If you remember three things
 
 1. **You are the PI.** Delegate implementation; own the question, the design, and the interpretation.
-2. **Write it down.** The agent has no memory — `AGENTS.md`, provenance, lab notebook. Every caught mistake becomes a rule.
+2. **Keep the lab notebook.** The agent has no memory — so the project's learning has to live in the repo. The notebook is where it lives (`AGENTS.md` and provenance feed it); every caught mistake becomes a rule.
 3. **Trust is earned by verification.** Check the diffs, the inputs, the counts — and verify on a case you already know.
 
 . . .
