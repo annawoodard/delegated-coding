@@ -372,25 +372,22 @@ it's about your context, not capability. That sets up delegate-vs-own
 
 . . .
 
-In class, AI mistakes cost you points. In research, they become
-**wrong conclusions** — and nothing catches them but you.
-
-. . .
-
-And you'll **redo everything** — so every result must be **regenerable by a command**, not from memory.
+In class, an AI mistake costs you points. In research, it becomes a
+**wrong conclusion** that runs clean — no autograder flags it. Catching it
+is on **you and your mentor**.
 
 ::: {.notes}
-~4 min. For students who've never done research, this is the most important
-context in the talk. There is no answer key. A bug that crashes is a good
-bug — it announces itself. The dangerous bug runs clean and quietly changes
-the result. That's why "it works" means something different from here on.
-The redo line — give the examples aloud: the data gets updated, a bug
-turns up in week 7, the mentor asks "what if we exclude those samples?"
-Reproducibility isn't an ideal here, it's self-defense —
-week-7-you rerunning everything after a bug fix is a near certainty; it
-sets up the provenance material in Part 4 so it lands as "obviously
-necessary." (Absorbed from the cut "what your summer produces" slide; the
-"every figure is a claim" point now lives on Ground rules.)
+~3 min. For students who've never done research, this is the framing that
+matters most: there's no answer key. A bug that crashes is a good bug — it
+announces itself. The dangerous bug runs clean and quietly changes the
+result, and nothing automatic warns you — so "it works" means something
+different from here on, and the checking becomes human judgment (yours
+first, then your mentor's, eventually a reviewer's). Don't oversell "only
+you" — the point is there's no autograder, not that you're alone. Sets up
+Part 5 (failures that look right) and Part 4 (the provenance + lab-notebook
+habits that make wrong claims catchable). The "you'll redo everything"
+motivation for reproducibility now lives where it belongs, on the auditable
+slide in Part 4.
 :::
 
 # Part 3: You are the PI {background-color="#800000"}
@@ -774,7 +771,10 @@ Why: week-7 you, bug found, mentor asking "which version made this figure?" —
 this turns a crisis into a 10-minute rerun.
 
 ::: {.notes}
-~3 min. Connect to the Part 2 slide: you WILL redo everything. The agent
+~3 min. The motivation — say it aloud: you WILL redo everything (the data
+gets updated, a week-7 bug, the mentor asks "what if we exclude those
+samples?"), so a result you can't regenerate is one you can't trust;
+reproducibility here is self-defense, not an ideal. The agent
 does this bookkeeping happily and consistently — it costs you nothing after
 the rule is in AGENTS.md: from then on every result folder documents itself,
 and "reported as ready" is gated on the README existing. ("Before the result
