@@ -860,9 +860,10 @@ One rule in `AGENTS.md`, and the agent keeps the notebook as it works:
 
 . . .
 
-Each session, the agent starts **fresh** — the notebook is how the next
-session (and the next *you*) picks up the thread. By August it's your
-**poster outline** and your **handoff doc**, written as you went.
+The agent starts each session **fresh** — so the notebook is its memory. But it's
+**yours** too: you stop **going in circles** (you can see what you already tried),
+you walk your **mentor** through *what you did and what you found*, and by August
+it's your **poster**, written as you went.
 
 ::: {.notes}
 ★ Anna's view: this is the MOST IMPORTANT slide in the talk — never cut it.
@@ -877,7 +878,11 @@ should we try next?" Students conflate them and end up with neither. The
 notebook is the direct answer to the context-window slide — the agent wakes
 up empty every session, so the running record IS its memory; "read the lab
 notebook and the last three result READMEs" is a great session-opener
-prompt. Mine doubles as the skeleton of every update I send collaborators
+prompt. Push the STUDENT payoff hard, not just the agent's memory: it stops
+you re-running dead ends (you can see what you already tried and ruled out),
+and it's what you scroll back through to prep a mentor meeting — "here's what
+I did and what I found." Same record, three jobs: the agent's memory, your
+anti-circles log, your mentor-update / poster skeleton. Mine doubles as the skeleton of every update I send collaborators
 and, eventually, the poster. Packaged as the $lab-notebook / $handoff
 skills. Keep it append-only and dated; let it grow, prune it on the
 maintenance pass.
