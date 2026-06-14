@@ -39,8 +39,10 @@ git if not demoing), "what your summer produces" (folded into the
 coursework slide), flywheel (folded into the seed story), third
 where-rules example, "norms vary" ground rule, various line-level
 tightening. Kept by request: workflow-maintenance slide, three-generations
-slide. Rough timing (~58-60 min — fits the hour if Q&A can spill a little;
-the remaining lever is cutting "three generations", ~-2 min):
+slide. ★ DO NOT CUT — the lab-notebook slide (practice 7) is, in Anna's
+view, the single most important idea in the whole talk. Never propose
+trimming it; if anything, give it MORE room. Rough timing (~58-60 min —
+fits the hour if Q&A can spill a little):
   ~5   hook + reframe
   ~11  part 1: what you're working with (LLMs, agents, harnesses)
   ~4   part 2: research is a different game
@@ -802,7 +804,13 @@ session (and the next *you*) picks up the thread. By August it's your
 **poster outline** and your **handoff doc**, written as you went.
 
 ::: {.notes}
-~2 min. The distinction is the teaching point: the README answers "how do I
+★ Anna's view: this is the MOST IMPORTANT slide in the talk — never cut it.
+It's the physical home of the whole thesis: the context-window slide says
+the agent has no memory; the PI slide says it doesn't learn unless you write
+it down; the flywheel says the learning lives in the repo. THIS is where it
+lives. Slow down here; it deserves more time than its ~2 min, not less.
+
+The distinction is the teaching point: the README answers "how do I
 reproduce run #14?"; the notebook answers "what have we learned, and what
 should we try next?" Students conflate them and end up with neither. The
 notebook is the direct answer to the context-window slide — the agent wakes
