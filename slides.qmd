@@ -578,22 +578,26 @@ failure is letting it render the verdict, not letting it argue.
 Git = version control: **snapshots of your project** you can compare and restore.
 If you've never used it: one-day learning curve, ask the agent itself to teach you.
 
-For agent work it's non-negotiable:
+For agent work it's non-negotiable — the agent **edits your files and runs commands**:
 
-- the agent **edits your files and runs commands** — git is the **undo button**
-- commit (snapshot) before every delegated task: cheap checkpoints
-- `git diff` shows **exactly what your collaborator changed** — that diff is
-  your review surface
+- **commit before every delegated task** — cheap checkpoints
+- broke something? **revert.** git is your **undo button**
+- every result traces to the **exact commit** that made it — your **audit trail**
 
 . . .
 
-No git → no diff → no review → no trust.
+The whole point is the safety net: **revert anything, trace everything** — so you can
+delegate boldly. *(Reading the diff is a fine way to learn what changed; the real check
+is the **outputs**, not the lines — Part 5.)*
 
 ::: {.notes}
-~3 min. Many will know git from class; some won't. The reframe matters for
-both: git isn't a chore here, it's the supervision instrument. You review an
-agent like you review a pull request. Agents also write good commit
-messages — make them do it.
+~3 min. Many will know git from class; some won't. The reframe: git isn't a
+chore, it's the safety net that makes delegation safe — you can revert
+anything and trace any result to the commit that made it. Don't sell
+diff-reading as required review (Anna doesn't read her code); if a student
+finds reading diffs helps them learn, great — but the real verification is on
+the outputs (Part 5). Agents write good commit messages — make them do it;
+those commits are also your provenance trail (links to the auditable practice).
 :::
 
 ## 2. Write the onboarding doc: `AGENTS.md`
