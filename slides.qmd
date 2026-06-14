@@ -1117,35 +1117,38 @@ becoming that person rather than outsourcing your way around it.
 
 ## Don't delegate the learning
 
-The PI model has a prerequisite: **the PI can evaluate the work.** You can only
-safely delegate what you could **check yourself** — a boundary that **moves as you learn.**
+A PI can only sign off on what they can **evaluate**. The catch: in a new field, a
+right answer and a **confident wrong one look identical** — so you don't know what you can't check.
 
 . . .
 
-You ask: *"run a t-test on these two groups."* It returns **p = 0.03** — looks clean.
-
-- **Now**, if you don't know what a t-test assumes, you can't see it used the
-  **wrong test on skewed data** — a confident, plausible, *wrong* answer.
-  Don't delegate it; **learn it** (the agent is a great tutor).
-- **By August**, you check the assumptions yourself, then hand off the mechanics
-  and verify. *Same task — the boundary moved.*
+*"Run a t-test"* → **p = 0.03**, looks clean. Miss that it's the **wrong test for
+skewed data** and you'd never know. So how do you find the gap?
 
 . . .
 
-Honest test before every handoff: ***could I tell if this came back wrong?***
-Competent hands → **faster.** Confused hands → **more confidently wrong.**
+**Make the agent show its reasoning, not just its answer:**
+
+> *"What did you decide here, what are you assuming, and how could it be wrong?
+> Explain it so I could defend it to my mentor."*
+
+. . .
+
+Now *"I assumed the groups are roughly normal"* is **on the table** — a gap you can
+learn, or take to your mentor. **That's how the boundary moves.**
 
 ::: {.notes}
-~3 min. The honest tension of the talk: teaching delegation to people whose
-job is learning. The t-test example makes the boundary concrete — the output
-(p = 0.03) looks identical whether or not the right test was used; only
-understanding tells them apart. So the boundary is about EVALUABILITY, not
-difficulty, which is why "could I tell if it came back wrong?" is the test.
-Resolution: the boundary is personal and it moves — week 1 you delegate
-little, by August most of the implementation. Knowing where YOUR boundary
-currently is — that's the meta-skill. (Swap in a domain example that fits
-the room if t-tests aren't universal there: "95% accuracy" on imbalanced
-data, or a join that silently drops rows.)
+~3 min. Anna's point: "only delegate what you can evaluate" is circular if you
+don't know what you can't evaluate. The resolution is the method on the slide —
+you don't have to spot blind spots cold; you make the agent ENUMERATE its
+assumptions, decisions, and failure modes (it's good at this — it knows the
+standard caveats even when you don't), and your gaps surface as the choices you
+didn't know existed and the explanations you can't follow. "Could I defend this
+to my mentor?" is the gut check: if you'd go hand-wavy, that's the gap. This
+converts unknown-unknowns into known-unknowns, which you then learn (next slide:
+make it a tutor) or escalate to your mentor — and running that loop is exactly
+how the boundary moves. Domain-swap the t-test if the room isn't statsy:
+"95% accuracy" on imbalanced data, or a join that silently drops rows.
 :::
 
 ## Make it a tutor, not a vending machine
