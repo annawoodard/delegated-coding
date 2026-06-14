@@ -45,7 +45,7 @@ the remaining lever is cutting "three generations", ~-2 min):
   ~11  part 1: what you're working with (LLMs, agents, harnesses)
   ~4   part 2: research is a different game
   ~9   part 3: the mental model
-  ~18  part 4: running the lab (8 practices: added checkable-target + lab-notebook)
+  ~20  part 4: running the lab (9 practices; the overnight-campaign slide is scoped/cuttable)
   ~9   part 5: when it goes wrong
   ~8   part 6: the student catch (incl. the jobs-anxiety slide)
   ~4   part 7: getting started + takeaways (+ ~5 min questions)
@@ -763,12 +763,6 @@ The rule from my own `AGENTS.md`, sized for a summer project — paste it into y
 
 . . .
 
-**If your work is computational experiments**, it scales on the cluster: the agent
-writes the **SLURM** script, launches, and files each run in its own provenance'd
-folder — **dozens of runs, each self-documenting**, while you sleep.
-
-. . .
-
 Why: week-7 you, bug found, mentor asking "which version made this figure?" —
 this turns a crisis into a 10-minute rerun.
 
@@ -781,14 +775,9 @@ is reported" is the load-bearing phrase — provenance as part of the
 definition of done, not cleanup.) Keep the framing GENERAL: a "result" is a
 model run, a simulation, a cleaned dataset, a scraper pass, a figure, a
 deployed tool — name a couple that match the projects in the room so the
-non-modeling students see themselves. The SLURM line is scoped on purpose —
-a highlight for the modeling/simulation half (CNNs, simulation-based
-inference, materials/astro) and a fun aside for the data-engineering / tool
-/ analysis half; don't imply everyone should be running sweeps. The agent
-can run a whole campaign on the RCC cluster — write the submit script,
-launch, babysit the queue, pull results back — each run landing in its own
-README'd folder ($slurm / $job-babysitting skills). This discipline is rare
-even among pros; a student who has it stands out.
+non-modeling students see themselves. (The HPC version — running a whole
+campaign of these autonomously — gets its own slide at the end of Part 4.)
+This discipline is rare even among pros; a student who has it stands out.
 :::
 
 ## 7. Make it keep the lab notebook
@@ -845,6 +834,43 @@ only make the next experiment easier to run and audit.
 ~2 min. A nice beat: the agent cleaning up after the agent, and "treat the
 workflow as something you maintain, not something you set up once."
 (Was a trim candidate; Anna wants it kept.)
+:::
+
+## 9. Let it run the campaign — overnight
+
+[*For projects with many computational runs — model training, simulations, sweeps:*]{.smallgray}
+
+You hand off the **plan**; the agent runs the **loop**:
+
+- you set the **question**, the **grid** (what varies), a **success metric**, a **budget**
+- it writes the **SLURM** script, launches, and **babysits the queue** — reads failed logs, fixes, resubmits
+- each finished run lands in its own **README'd folder** + a line in the **lab notebook**
+- it stops when the **metric is met** or the grid is exhausted
+
+. . .
+
+You wake up to a table of **reproducible** runs and a notebook saying **what won, and why.**
+
+. . .
+
+⚠️ Autonomy multiplies **mistakes** too — a wrong metric or a silent bug now runs 200 times.
+**Pilot one run, audit it, *then* scale.** *(Which is exactly Part 5 →)*
+
+::: {.notes}
+~3 min, and the energy peak of Part 4 — but scope it out loud so the
+tool-builders don't feel left out: this is the model-training / simulation
+crowd (CNNs, simulation-based inference, materials/astro/neuro). The reason
+it works is that it's the SYNTHESIS of the last four practices: the success
+metric IS the checkable target (practice 5); each run self-documents
+(practice 6); the notebook logs the thread (practice 7). Strip those away
+and autonomy is reckless; with them it's a force multiplier — the agent runs
+a campaign you can fully audit afterward. Skills: $slurm / $job-babysitting.
+The guardrail is the bridge to Part 5: the same autonomy that runs 200 good
+experiments runs 200 bad ones if the metric is wrong or the data has a
+silent bug — the seed-that-didn't-vary story at campaign scale. So pilot on
+a single run, audit it with the checklist, THEN let it loose.
+[Anna: drop in a real overnight-campaign anecdote if you have one — a night
+it found something, or a night the wrong metric burned the compute.]
 :::
 
 # Part 5: When it goes wrong {background-color="#800000"}
