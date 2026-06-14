@@ -693,7 +693,7 @@ task matches — works in Claude Code, Cursor, Codex, and Gemini CLI.
 
 . . .
 
-We've published ours — a year of research-agent judgment, free to install:
+I've published mine — a year of research-agent judgment, free to install:
 [**github.com/uchicago-dsi/ai-sci-skills**](https://github.com/uchicago-dsi/ai-sci-skills)
 
 - `$sensemaking` — check whether a finding **makes sense before trusting it**
