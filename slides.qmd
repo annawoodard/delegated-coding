@@ -46,7 +46,7 @@ fits the hour if Q&A can spill a little):
   ~5   hook + reframe
   ~11  part 1: what you're working with (LLMs, agents, harnesses)
   ~4   part 2: research is a different game
-  ~9   part 3: the mental model
+  ~13  part 3: the mental model (+ acceptance-criteria and plan-first slides)
   ~20  part 4: running the lab (9 practices; the overnight-campaign slide is scoped/cuttable)
   ~9   part 5: when it goes wrong
   ~8   part 6: the student catch (incl. the jobs-anxiety slide)
@@ -445,7 +445,6 @@ context-window slide and forward to AGENTS.md.
 . . .
 
 The win isn't *hands-off* — it's **you didn't type it, but you understand it and can defend it.**
-("What would convince me" = your **acceptance criteria**, set *before* delegating: the highest-leverage habit here.)
 
 ::: {.notes}
 ~3 min. The reframe (Anna's point): the talk's real enemy is the RIGHT
@@ -454,10 +453,85 @@ all of Part 6). Micromanaging is the opposite over-correction: you keep
 every detail but gain no leverage. Good delegation threads between — you
 hand off the typing, NOT the understanding. The delegating prompt does five
 jobs: goal, acceptance criteria, process (inspect → plan → implement →
-verify), scope ("smallest thing"), reporting — copy-pasteable, say so. "If
-you don't know what would convince you, you're not ready to delegate" —
-figuring that out IS the research thinking. Land the closing hard: "I didn't
-type it, but I understand it and can defend it" is the whole talk in a line.
+verify), scope ("smallest thing"), reporting — copy-pasteable, say so. Land
+the closing hard: "I didn't type it, but I understand it and can defend it"
+is the whole talk in a line. The two compressed phrases here — "what would
+convince me" and "propose a plan" — each get their own slide next.
+:::
+
+## What would convince you?
+
+Before you delegate, decide what would make you **believe it worked** —
+concretely enough to check.
+
+::: {.columns}
+::: {.column width="50%"}
+**Vague** — you can't tell if it's right
+
+- "make a plot of the results"
+- "clean up the data"
+- "speed up this script"
+- "build a model for X"
+:::
+::: {.column width="50%"}
+**Acceptance criteria** — you can
+
+- "reproduces Fig. 2 within rounding"
+- "row count = 412 patients, or tell me why not"
+- "**same outputs**, just faster"
+- "beats the baseline — and **survives a new seed**"
+:::
+:::
+
+. . .
+
+Can't say what would convince you? You're **not ready to delegate** — working
+that out *is* the research. (And if the check is runnable, the agent can iterate on it itself — Part 4.)
+
+::: {.notes}
+~2 min. Unpacks the "what would convince me" phrase from the prompt shift —
+Anna's note: the abstract phrase needs concrete examples to land. The move:
+replace a vague verb ("make", "clean", "speed up") with an observable test.
+Each right-column example seeds something later — "same outputs, just
+faster" is the refactor invariant; "survives a new seed" is the Part 5 seed
+story; the row-count one is the silent-N failure. This is the single
+highest-leverage habit in the talk — say so. It's also the input to practice
+5 (give it a checkable target): a runnable acceptance criterion IS the
+target the agent iterates against.
+:::
+
+## Agree on the plan before any code
+
+For anything non-trivial: **"Plan first — don't write code yet."**
+The agent drafts a short design (a **design doc** for bigger tasks); you catch
+the misunderstanding while it's still **one paragraph, not 300 lines.**
+
+> "Before implementing, tell me your **approach**, the **files** you'll touch,
+> the **assumptions** you're making, and **how you'll check it**. Wait for my OK."
+
+. . .
+
+You're checking three things:
+
+- it understood the **real** task — not a plausible nearby one
+- the approach is one **you'd endorse** — no odd shortcuts, no scope creep
+- its **assumptions** match your data and your constraints
+
+. . .
+
+Five minutes on the plan beats an hour reviewing code that solved the **wrong problem.**
+
+::: {.notes}
+~2 min. Unpacks "propose a plan" and elevates it to a habit, because it's
+one of the highest-leverage things they'll learn: the cheapest place to
+catch a misunderstanding is BEFORE the code exists. A plan is a paragraph
+you read in a minute; 300 lines of confidently-wrong code is an hour you
+won't get back. The three checks are the review surface — especially
+"assumptions match your data," where the model's plausible-but-wrong guesses
+hide (under-the-hood slide). For a big task, have it write the plan to a file
+(DESIGN.md) and commit it, so the implementation can be checked against what
+you agreed to. Pairs with "demand the full loop": the plan is the front
+gate, the report is the back gate.
 :::
 
 ## What to delegate, what to own
