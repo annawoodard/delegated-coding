@@ -427,40 +427,37 @@ context-window slide and forward to AGENTS.md.
 
 ::: {.columns}
 ::: {.column width="42%"}
-**Micromanaging**
+**Two ways to lose**
 
-> "Fix this line."
-
-> "Now change the axis label."
-
-> "No, the other axis."
-
-You're still the hands —
-just slower.
+- *Micromanaging* — "fix this line… no, the other axis" → you're **the hands, just slower**
+- *Vibe-delegating* — "just build the whole thing" → you **can't vouch** for what comes back
 :::
 ::: {.column width="58%"}
-**Delegating**
+**Delegating — in charge, not in the weeds**
 
-> "Here is the **goal**, here is **what would
-> convince me** it worked.
-> **Inspect** the code first, propose a **plan**,
-> implement the **smallest thing** that answers
-> the question, run a **check** I can rerun,
-> and tell me **what changed**."
+> "Here is the **goal**, and **what would convince
+> me** it worked. **Inspect** first, propose a
+> **plan**, implement the **smallest thing**, run a
+> **check I can rerun**, and tell me **what changed**."
 :::
 :::
 
 . . .
 
-"What would convince me" = your **acceptance criteria**. Deciding that
-*before* delegating is the single highest-leverage habit in this talk.
+The win isn't *hands-off* — it's **you didn't type it, but you understand it and can defend it.**
+("What would convince me" = your **acceptance criteria**, set *before* delegating: the highest-leverage habit here.)
 
 ::: {.notes}
-~3 min. The delegating prompt does five jobs: goal, acceptance criteria,
-process (inspect → plan → implement → verify), scope control ("smallest
-thing"), and a reporting requirement. Students can copy this template
-verbatim — say so. If you don't know what would convince you, you're not
-ready to delegate the task; figuring that out is the research thinking.
+~3 min. The reframe (Anna's point): the talk's real enemy is the RIGHT
+failure — vibe-delegating, shipping what you can't vouch for (slide 2, and
+all of Part 6). Micromanaging is the opposite over-correction: you keep
+every detail but gain no leverage. Good delegation threads between — you
+hand off the typing, NOT the understanding. The delegating prompt does five
+jobs: goal, acceptance criteria, process (inspect → plan → implement →
+verify), scope ("smallest thing"), reporting — copy-pasteable, say so. "If
+you don't know what would convince you, you're not ready to delegate" —
+figuring that out IS the research thinking. Land the closing hard: "I didn't
+type it, but I understand it and can defend it" is the whole talk in a line.
 :::
 
 ## What to delegate, what to own
