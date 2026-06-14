@@ -750,21 +750,22 @@ that judgment stays yours. Don't let "iterate until it passes" become
 
 ## 6. Make every result auditable
 
-One experiment → **one config** → **one directory** → a `README` of how it was made.
+One **result** → **one folder** → a `README` of how it was made. A "result" is
+whatever your project produces — a model run, a simulation, a dataset, a figure, a deployed tool.
 
 The rule from my own `AGENTS.md`, sized for a summer project — paste it into yours:
 
 > "Every new results directory must contain a `README.md` **before the result
-> is reported**. At the top: one line on **what this run tests**. Then enough
-> to rerun or audit it: the exact **command**, the **config**, the **input
-> files**, the **git commit**, and **how to regenerate it**. Add key plots
-> and numbers as they appear."
+> is reported**. At the top: one line on **what this is for**. Then enough to
+> rerun or audit it: the exact **command**, any **config or parameters**, the
+> **input files**, the **git commit**, and **how to regenerate it**. Add key
+> plots and numbers as they appear."
 
 . . .
 
-On the cluster this is where it pays off: the agent writes the **SLURM** script,
-launches the run, and drops it in its own provenance'd directory —
-**dozens of experiments, each self-documenting**, while you do something else.
+**If your work is computational experiments**, it scales on the cluster: the agent
+writes the **SLURM** script, launches, and files each run in its own provenance'd
+folder — **dozens of runs, each self-documenting**, while you sleep.
 
 . . .
 
@@ -774,30 +775,36 @@ this turns a crisis into a 10-minute rerun.
 ::: {.notes}
 ~3 min. Connect to the Part 2 slide: you WILL redo everything. The agent
 does this bookkeeping happily and consistently — it costs you nothing after
-the rule is in AGENTS.md: from then on every result directory documents
-itself, and "reported as ready" is gated on the README existing. ("Before
-the result is reported" is the load-bearing phrase — it makes provenance
-part of the definition of done, not cleanup.) The HPC line is the exciting
-one for this audience: the agent can run a whole campaign on the RCC cluster
-— write the submit script, launch, babysit the queue, pull results back —
-each run landing in its own config'd, README'd directory. That's the
-$slurm / $job-babysitting skills from the skills slide. This discipline is
-rare even among professional scientists; a student who has it stands out.
+the rule is in AGENTS.md: from then on every result folder documents itself,
+and "reported as ready" is gated on the README existing. ("Before the result
+is reported" is the load-bearing phrase — provenance as part of the
+definition of done, not cleanup.) Keep the framing GENERAL: a "result" is a
+model run, a simulation, a cleaned dataset, a scraper pass, a figure, a
+deployed tool — name a couple that match the projects in the room so the
+non-modeling students see themselves. The SLURM line is scoped on purpose —
+a highlight for the modeling/simulation half (CNNs, simulation-based
+inference, materials/astro) and a fun aside for the data-engineering / tool
+/ analysis half; don't imply everyone should be running sweeps. The agent
+can run a whole campaign on the RCC cluster — write the submit script,
+launch, babysit the queue, pull results back — each run landing in its own
+README'd folder ($slurm / $job-babysitting skills). This discipline is rare
+even among pros; a student who has it stands out.
 :::
 
 ## 7. Make it keep the lab notebook
 
 Two records, easy to confuse — you want **both**:
 
-- a run's **README** = how *one* experiment was made *(provenance)*
+- a result's **README** = how *one* result was made *(provenance)*
 - the **lab notebook** = the *thread across all of them* *(the story)*
 
 . . .
 
 One rule in `AGENTS.md`, and the agent keeps the notebook as it works:
 
-> "After each experiment, append to `LAB_NOTEBOOK.md`: what you tried, the
-> result, and what it changes about **what we believe** and **try next**."
+> "After each experiment or work session, append to `LAB_NOTEBOOK.md`: what
+> you tried, the result, and what it changes about **what we believe** and
+> **try next**."
 
 . . .
 
