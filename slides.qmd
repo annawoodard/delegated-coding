@@ -1098,7 +1098,7 @@ The oldest version of the honest answer — from radiology, 2017:
 
 . . .
 
-**Becoming the somebody is what this summer is for.**
+**Become the somebody!**
 
 ::: {.notes}
 ~2 min. Name the anxiety directly — they're all thinking it. Provenance
@@ -1117,26 +1117,35 @@ becoming that person rather than outsourcing your way around it.
 
 ## Don't delegate the learning
 
-The PI model has a prerequisite: **the PI can evaluate the work.**
-
-You're here this summer to *become* that person —
-and you can only safely delegate what you could **check yourself**.
+The PI model has a prerequisite: **the PI can evaluate the work.** You can only
+safely delegate what you could **check yourself** — a boundary that **moves as you learn.**
 
 . . .
 
-- In competent hands, these tools make you **faster**
-- In confused hands, they make you **more confidently wrong**
+You ask: *"run a t-test on these two groups."* It returns **p = 0.03** — looks clean.
+
+- **Now**, if you don't know what a t-test assumes, you can't see it used the
+  **wrong test on skewed data** — a confident, plausible, *wrong* answer.
+  Don't delegate it; **learn it** (the agent is a great tutor).
+- **By August**, you check the assumptions yourself, then hand off the mechanics
+  and verify. *Same task — the boundary moved.*
 
 . . .
 
-Honest test before delegating: *could I tell if this came back wrong?*
-If not — that task is still yours. **The boundary moves as you learn.**
+Honest test before every handoff: ***could I tell if this came back wrong?***
+Competent hands → **faster.** Confused hands → **more confidently wrong.**
 
 ::: {.notes}
 ~3 min. The honest tension of the talk: teaching delegation to people whose
-actual job is learning. Resolution: the delegation boundary is personal and
-it moves. Week 1 you delegate little; by August, most of the implementation.
-Knowing where YOUR boundary currently is — that's the meta-skill.
+job is learning. The t-test example makes the boundary concrete — the output
+(p = 0.03) looks identical whether or not the right test was used; only
+understanding tells them apart. So the boundary is about EVALUABILITY, not
+difficulty, which is why "could I tell if it came back wrong?" is the test.
+Resolution: the boundary is personal and it moves — week 1 you delegate
+little, by August most of the implementation. Knowing where YOUR boundary
+currently is — that's the meta-skill. (Swap in a domain example that fits
+the room if t-tests aren't universal there: "95% accuracy" on imbalanced
+data, or a join that silently drops rows.)
 :::
 
 ## Make it a tutor, not a vending machine
