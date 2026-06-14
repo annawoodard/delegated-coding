@@ -282,15 +282,15 @@ read, the commands it has run — sits in its **context window**: its working me
 Three consequences you'll feel immediately:
 
 - it's **finite** — long sessions degrade; fresh task, fresh session
-- it starts every session **empty** — the agent has **no memory of yesterday**
+- each session starts **fresh** — and any "memory" it keeps is partial and **not yours to audit**
 - it only knows what it has **read** — it won't know about your data's quirks unless told
 
 . . .
 
-So anything you want it to know *every time* has to be **written down in the
-project**. That's not a workaround — it's *the* system. The single most
-important habit in this talk falls straight out of it: in Part 4, the agent
-keeps a **lab notebook**.
+So anything that has to be **right every time**, you write down in the project —
+where you **control it, version it, and can check it.** That's not a workaround —
+it's *the* system. The single most important habit in this talk falls straight
+out of it: in Part 4, the agent keeps a **lab notebook**.
 
 ::: {.notes}
 ~2 min. This is the mechanical fact that motivates half the workflow advice
@@ -298,7 +298,11 @@ later (AGENTS.md, lab notebook, provenance files). Frame it now so Part 4
 feels inevitable. The new last line is a deliberate plant: name the lab
 notebook here as the payoff, so when it arrives in Part 4 it lands as "the
 thing he promised" rather than one practice among many. (It's Anna's #1
-slide — see its DO-NOT-CUT note.)
+slide — see its DO-NOT-CUT note.) On "memory": yes, Claude Code and ChatGPT
+now persist some memory across sessions — say so if asked, but the point
+holds: that memory is partial, opaque, and not versioned or auditable, so the
+record you'll defend in a paper belongs in the repo where you control it. One
+sentence; don't belabor it.
 :::
 
 ## What it's genuinely good and bad at
@@ -372,10 +376,6 @@ it's about your context, not capability. That sets up delegate-vs-own
 
 . . .
 
-In class, an AI mistake costs you points. In research, it becomes a
-**wrong conclusion** that runs clean — no autograder flags it. Catching it
-is on **you and your mentor**.
-
 ::: {.notes}
 ~3 min. For students who've never done research, this is the framing that
 matters most: there's no answer key. A bug that crashes is a good bug — it
@@ -411,8 +411,8 @@ watch what good delegation feels like from below, then apply it from above.
 
 . . .
 
-One difference from a real student: the agent **doesn't learn between
-sessions** unless *you* write the lessons down.
+One difference from a real student: the agent **won't reliably carry the
+lessons forward** unless *you* write them down.
 
 ::: {.notes}
 ~4 min. The load-bearing slide. Everything in Part 4 — instruction files,
@@ -444,9 +444,9 @@ context-window slide and forward to AGENTS.md.
 
 . . .
 
-The win isn't *hands-off* — it's **you didn't type it, but you understand it and can defend it.**
 
 ::: {.notes}
+The win isn't *hands-off* — it's **you didn't type it, but you understand it and can defend it.**
 ~3 min. The reframe (Anna's point): the talk's real enemy is the RIGHT
 failure — vibe-delegating, shipping what you can't vouch for (slide 2, and
 all of Part 6). Micromanaging is the opposite over-correction: you keep
@@ -604,7 +604,7 @@ A plain text file in your project that the harness **reads automatically at
 the start of every session**. (Claude Code also reads `CLAUDE.md`; Cursor
 has rules files — same idea.)
 
-Remember: the agent wakes up with **no memory**. This file is what survives.
+Remember: the agent wakes up **fresh** every session. This file is what survives.
 
 Put in it what you'd tell a new lab member on day one:
 
@@ -884,16 +884,16 @@ One rule in `AGENTS.md`, and the agent keeps the notebook as it works:
 
 . . .
 
-The agent has **no memory between sessions** — the notebook is how the next
+Each session, the agent starts **fresh** — the notebook is how the next
 session (and the next *you*) picks up the thread. By August it's your
 **poster outline** and your **handoff doc**, written as you went.
 
 ::: {.notes}
 ★ Anna's view: this is the MOST IMPORTANT slide in the talk — never cut it.
-It's the physical home of the whole thesis: the context-window slide says
-the agent has no memory; the PI slide says it doesn't learn unless you write
-it down; the flywheel says the learning lives in the repo. THIS is where it
-lives. Slow down here; it deserves more time than its ~2 min, not less.
+It's the physical home of the whole thesis: the context-window slide says you
+can't rely on its memory; the PI slide says it won't carry lessons unless you
+write them down; the flywheel says the learning lives in the repo. THIS is
+where it lives. Slow down here; it deserves more time than its ~2 min, not less.
 
 The distinction is the teaching point: the README answers "how do I
 reproduce run #14?"; the notebook answers "what have we learned, and what
@@ -1058,8 +1058,9 @@ gap got filled with the wrong default. Then point at the *shape* of the fix:
 not a one-off correction but the general rule, written where every future
 session reads it — the same move as "Where the rules come from" in Part 4;
 name it as one habit. The harvest line reframes errors as compounding
-assets, and answers "the agent doesn't learn between sessions": right — so
-the learning lives in the repo, the thing real labs take years to build.
+assets, and answers "can I rely on its memory?": no — so the learning lives
+in the repo, where you control and version it; the thing real labs take years
+to build.
 :::
 
 ## Make auditing cheap
@@ -1233,7 +1234,7 @@ the hour was worth it.
 ## If you remember three things
 
 1. **You are the PI.** Delegate implementation; own the question, the design, and the interpretation.
-2. **Keep the lab notebook.** The agent has no memory — so the project's learning has to live in the repo. The notebook is where it lives (`AGENTS.md` and provenance feed it); every caught mistake becomes a rule.
+2. **Keep the lab notebook.** You can't rely on the agent's memory — so the project's learning has to live in the repo. The notebook is where it lives (`AGENTS.md` and provenance feed it); every caught mistake becomes a rule.
 3. **Trust is earned by verification.** Check the diffs, the inputs, the counts — and verify on a case you already know.
 
 . . .
