@@ -39,7 +39,7 @@ git if not demoing), "what your summer produces" (folded into the
 coursework slide), flywheel (folded into the seed story), third
 where-rules example, "norms vary" ground rule, various line-level
 tightening. Kept by request: workflow-maintenance slide, three-generations
-slide. ★ DO NOT CUT — the lab-notebook slide (practice 7) is, in Anna's
+slide. ★ DO NOT CUT — the lab-notebook slide (practice 6) is, in Anna's
 view, the single most important idea in the whole talk. Never propose
 trimming it; if anything, give it MORE room. Rough timing (~58-60 min —
 fits the hour if Q&A can spill a little):
@@ -47,7 +47,7 @@ fits the hour if Q&A can spill a little):
   ~11  part 1: what you're working with (LLMs, agents, harnesses)
   ~4   part 2: research is a different game
   ~13  part 3: the mental model (+ acceptance-criteria and plan-first slides)
-  ~20  part 4: running the lab (9 practices; the overnight-campaign slide is scoped/cuttable)
+  ~18  part 4: running the lab (8 practices; meeting-sized folded into the first-task slide)
   ~9   part 5: when it goes wrong
   ~8   part 6: the student catch (incl. the jobs-anxiety slide)
   ~4   part 7: getting started + takeaways (+ ~5 min questions)
@@ -374,8 +374,6 @@ it's about your context, not capability. That sets up delegate-vs-own
 :::
 :::
 
-. . .
-
 ::: {.notes}
 ~3 min. For students who've never done research, this is the framing that
 matters most: there's no answer key. A bug that crashes is a good bug — it
@@ -444,9 +442,9 @@ context-window slide and forward to AGENTS.md.
 
 . . .
 
+The win isn't *hands-off* — it's **you didn't type it, but you understand it and can defend it.**
 
 ::: {.notes}
-The win isn't *hands-off* — it's **you didn't type it, but you understand it and can defend it.**
 ~3 min. The reframe (Anna's point): the talk's real enemy is the RIGHT
 failure — vibe-delegating, shipping what you can't vouch for (slide 2, and
 all of Part 6). Micromanaging is the opposite over-correction: you keep
@@ -486,7 +484,7 @@ concretely enough to check.
 . . .
 
 Can't say what would convince you? You're **not ready to delegate** — working
-that out *is* the research. (And if the check is runnable, the agent can iterate on it itself — Part 4.)
+that out *is* the research.
 
 ::: {.notes}
 ~2 min. Unpacks the "what would convince me" phrase from the prompt shift —
@@ -496,7 +494,7 @@ Each right-column example seeds something later — "same outputs, just
 faster" is the refactor invariant; "survives a new seed" is the Part 5 seed
 story; the row-count one is the silent-N failure. This is the single
 highest-leverage habit in the talk — say so. It's also the input to practice
-5 (give it a checkable target): a runnable acceptance criterion IS the
+4 (give it a checkable target): a runnable acceptance criterion IS the
 target the agent iterates against.
 :::
 
@@ -726,29 +724,7 @@ $experiment-design, $rut-breaker, and $slurm / $job-babysitting for cluster
 work. Keep shared skills generic; project facts stay in AGENTS.md.
 :::
 
-## 3. Give meeting-sized tasks
-
-One task ≈ what you'd bring to **one meeting with your mentor**:
-
-- "make this plot reproducible from this CSV"
-- "turn this notebook cell into a script with arguments"
-- "find why this run crashed and summarize the fix"
-
-. . .
-
-Too small — "fix this line" — you're micromanaging; you gained nothing.
-
-Too big — "build my whole analysis pipeline" — **you can't review what comes
-back**, so you've silently handed over ownership.
-
-::: {.notes}
-~2 min. Task size is the main control knob they have. The "too big" failure
-is the sneaky one: the agent will happily attempt the whole pipeline, and
-produce something impressive-looking that exceeds your ability to check.
-That's how you end up presenting work you don't understand.
-:::
-
-## 4. Demand the full loop, not just code
+## 3. Demand the full loop, not just code
 
 Ask for **inspect → plan → implement → verify** — and a report at the end:
 
@@ -762,10 +738,6 @@ Ask for **inspect → plan → implement → verify** — and a report at the en
 "Done, everything works" is a **worse** answer than
 "done, but I assumed the dates are UTC — you should check that."
 
-. . .
-
-If it can't fill in item 4, that's not confidence. It's a missing section.
-
 ::: {.notes}
 ~3 min. "Remaining uncertainty" is the item students will skip and the one
 that matters most — it's also the item that fights the model's natural
@@ -773,7 +745,7 @@ overconfidence (slide: under the hood). Put this four-item report format in
 AGENTS.md so it happens every session automatically.
 :::
 
-## 5. Give it a target it can check itself
+## 4. Give it a target it can check itself
 
 You say it's wrong. It tries again. Still wrong. You correct it again —
 **you've become the test**, grading every attempt by hand, one round at a time.
@@ -832,7 +804,7 @@ that judgment stays yours. Don't let "iterate until it passes" become
 "optimize until the metric is gamed" — eyeball the result too.
 :::
 
-## 6. Make every result auditable
+## 5. Make every result auditable
 
 One **result** → **one folder** → a `README` of how it was made. A "result" is
 whatever your project produces — a model run, a simulation, a dataset, a figure, a deployed tool.
@@ -867,7 +839,7 @@ campaign of these autonomously — gets its own slide at the end of Part 4.)
 This discipline is rare even among pros; a student who has it stands out.
 :::
 
-## 7. Make it keep the lab notebook
+## 6. Make it keep the lab notebook
 
 Two records, easy to confuse — you want **both**:
 
@@ -930,7 +902,7 @@ Every entry, the same four moves:
 ~2 min. Make it concrete — read the entry aloud; THIS is what "the learning
 lives in the repo" actually looks like. Three things to point at: (1) the
 **Tried** line links straight to the run's README — notebook and provenance
-(practice 6) interlock. (2) The **Surprise** line is the gold: an anomaly
+(practice 5) interlock. (2) The **Surprise** line is the gold: an anomaly
 the agent flagged becomes a mentor question becomes a rule — the flywheel in
 one line. (3) **Believe / Next** is what students skip and exactly what lets
 August-you write the poster without reconstructing the summer from memory.
@@ -939,7 +911,7 @@ This is the companion to the AGENTS.md "Inside a real one" slide, and it's
 the second half of Anna's #1 idea — give it the time.
 :::
 
-## 8. Maintain the workflow itself
+## 7. Maintain the workflow itself
 
 Weeks of agent work accumulate **slop**: duplicate scripts, dead code,
 stale instructions, three versions of the same plot function.
@@ -961,7 +933,7 @@ workflow as something you maintain, not something you set up once."
 (Was a trim candidate; Anna wants it kept.)
 :::
 
-## 9. Let it run the campaign — overnight
+## 8. Let it run the campaign — overnight
 
 [*For projects with many computational runs — model training, simulations, sweeps:*]{.smallgray}
 
@@ -985,9 +957,9 @@ You wake up to a table of **reproducible** runs and a notebook saying **what won
 ~3 min, and the energy peak of Part 4 — but scope it out loud so the
 tool-builders don't feel left out: this is the model-training / simulation
 crowd (CNNs, simulation-based inference, materials/astro/neuro). The reason
-it works is that it's the SYNTHESIS of the last four practices: the success
-metric IS the checkable target (practice 5); each run self-documents
-(practice 6); the notebook logs the thread (practice 7). Strip those away
+it works is that it's the SYNTHESIS of the practices before it: the success
+metric IS the checkable target (practice 4); each run self-documents
+(practice 5); the notebook logs the thread (practice 6). Strip those away
 and autonomy is reckless; with them it's a force multiplier — the agent runs
 a campaign you can fully audit afterward. Skills: $slurm / $job-babysitting.
 The guardrail is the bridge to Part 5: the same autonomy that runs 200 good
@@ -1013,8 +985,7 @@ don't crash — they run clean and lie quietly:
 
 . . .
 
-**Reading the code is not enough.** If reading code caught everything,
-there would never be bugs. You have to check the **outputs**.
+**Reading the code is not enough** — you have to check the **outputs**.
 
 ::: {.notes}
 ~3 min. The section that earns the talk its keep — slow down. Every one of
@@ -1165,7 +1136,6 @@ Most students only ever ask it for *output*. Ask it to *teach*:
 . . .
 
 **For a student, the explanation is worth more than the code.**
-Every delegated task is a tutoring opportunity if you ask the follow-ups.
 
 ::: {.notes}
 ~2 min. This is how delegation and learning coexist instead of competing.
@@ -1213,7 +1183,7 @@ closes the loop with slide 1: I own every claim on these slides.
 
 ## Your first delegated task — this week
 
-Pick a **small, annoying, real** task in your own project:
+Pick a **small, annoying, real** task — about what you'd bring to **one mentor meeting**:
 
 1. Put the project in git; write a 10-line `AGENTS.md`
 2. Delegate with the template: goal, context, **what would convince you**
