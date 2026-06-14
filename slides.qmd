@@ -688,34 +688,40 @@ this is what it compounds into.
 ## When a lesson outgrows the project: **skills**
 
 `AGENTS.md` is memory for *one* project. Lessons that generalize become
-**skills**: small packaged workflows the agent discovers and applies when a
-task matches — works in Claude Code, Cursor, Codex, and Gemini CLI.
+**skills**: small packaged workflows — Claude Code, Cursor, Codex, Gemini CLI.
 
 . . .
 
-I've published mine — a year of research-agent judgment, free to install:
-[**github.com/uchicago-dsi/ai-sci-skills**](https://github.com/uchicago-dsi/ai-sci-skills)
-
-- `$sensemaking` — check whether a finding **makes sense before trusting it**
-- `$skeptical-labmate` — **stress-test** claims, baselines, and follow-up plans
-- `$lab-notebook` / `$handoff` — keep records **restartable and auditable**
+Each skill advertises just a one-line **title** — a few tokens the agent always
+sees — and loads its **full instructions only when a task needs them**. So you
+don't say *"use this"*: the titles tell it what's available, and it reads the
+right one itself. **Same vetted workflow every conversation — and no tokens
+spent loading what you're not using.**
 
 . . .
 
-Usage is one line: *"Use `$sensemaking` before you summarize these results."*
+I've published mine, free to install — [**uchicago-dsi/ai-sci-skills**](https://github.com/uchicago-dsi/ai-sci-skills):
+
+- `$sensemaking` — does a finding **hold up before I trust it?**
+- `$skeptical-labmate` — **stress-test** a claim or baseline
+- `$lab-notebook` / `$handoff` — records that stay **restartable**
 
 ::: {.notes}
-~3 min. The arc completes here: a rule fixes one mistake, AGENTS.md
-compounds rules for one project, skills package what generalizes ACROSS
-projects — notice the table is this talk in tool form (smallest decisive
-experiment, skepticism before trust, auditable records). Install = clone
-the repo and copy/symlink the folders into the agent's skills directory
-(~/.claude/skills, ~/.cursor/skills, ...); README has per-tool commands.
-Also in the repo (cut from the slide for time): $experiment-design
-(smallest experiment that changes a decision), $rut-breaker (detect
-low-yield loops), and $slurm / $job-babysitting for cluster work —
-relevant to anyone whose REU project touches the RCC clusters. Keep shared skills
-generic; project facts stay in AGENTS.md.
+~3 min. The technical point to land (Anna's): a skill is a folder whose
+header is a tiny title + description — those few tokens are always in
+context, so the agent knows the skill EXISTS; the full body (often long)
+loads only when the description matches the task. That's "progressive
+disclosure" — the reason you DON'T hand-invoke them (the old "type
+$sensemaking" move): you make them available, the agent self-selects.
+Payoff: the same vetted workflow fires every conversation instead of the
+model improvising a new one, and you're not paying tokens to paste the whole
+workflow into every prompt. The arc completes here — a rule fixes one
+mistake, AGENTS.md compounds rules for one project, skills package what
+generalizes ACROSS projects (the list is this talk in tool form). Install =
+clone the repo, copy/symlink folders into the skills dir (~/.claude/skills,
+~/.cursor/skills, ...); README has per-tool commands. Also in the repo:
+$experiment-design, $rut-breaker, and $slurm / $job-babysitting for cluster
+work. Keep shared skills generic; project facts stay in AGENTS.md.
 :::
 
 ## 3. Give meeting-sized tasks
