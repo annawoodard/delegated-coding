@@ -1,7 +1,7 @@
 ---
 title: "Delegated Coding"
 subtitle: "Managing your AI collaborators"
-author: "Anna Woodard"
+author: "Anna Woodard, PhD"
 institute: "UChicago Data Science Institute · UChicago Medicine"
 date: 2026-06-18
 format:
@@ -77,26 +77,6 @@ what today is about** — but I'm not pretending they're settled.
 Today's narrower question: *if* you choose to use these tools, how do you use
 them **responsibly, and well?**
 
-::: {.notes}
-~1.5 min. TITLE-SLIDE OPENER — say this over the title slide as you walk out,
-before advancing: "This talk was prepared the way it recommends. I sketched the
-argument; my agent drafted the slides — I own all the claims." That's the whole
-hour in miniature: the agent did the typing, I did the thinking and the
-reviewing. If anything here is wrong, that's on me, not the tool. Then advance.
-
-INTERACTIVE (this slide): "Raise your hand if you think genAI is good for the
-world. Now raise your hand if you think it's bad. … If both hands went up,
-good — that's the honest answer." Read the room; if it's stiff, skip the hands
-and just say it.
-
-Why this slide exists: a lot of you have real, considered objections — that's
-why people boo it at commencement. I won't stand here and pretend it's
-uncomplicated. The costs are real, the benefits are real, and nobody has fully
-resolved this. Today is deliberately narrower: not "should this exist," but
-"given that it does and you may use it, how do you do that well." We hit the
-career version of the worry head-on near the end (the "take my job" slide).
-:::
-
 ## Why not call it "vibe coding"?
 
 ::: {.columns}
@@ -121,18 +101,6 @@ not fine when someone has to
 The skill you'll need this summer is not prompting.
 It's **management**: scoping tasks, setting standards, reviewing the work.
 
-::: {.notes}
-~3 min. The term is Andrej Karpathy's — the Feb 2025 tweet on the slide.
-Even the coiner scoped it to throwaway weekend projects.
-Most of them have vibe-coded already — don't pretend otherwise.
-The pitch: research raises the stakes — you, your mentor, eventually a
-reviewer have to trust the result, and vibes don't survive a methods
-section. "Managing your AI collaborators" is meant literally: by August
-you'll supervise more code than you write. Today: (1) what these tools
-actually are, (2) what makes research different, (3) how to run the
-relationship.
-:::
-
 ## First, the rule that outranks this talk
 
 ⚠️ **Talk to your mentor — in week 1, not week 7.** Three questions to ask:
@@ -147,15 +115,6 @@ relationship.
 . . .
 
 Nothing in the next hour overrides what your mentor tells you.
-
-::: {.notes}
-~2 min. Deliver plainly — norms genuinely differ across labs, and students
-can't yet tell which norms are universal vs. lab-specific. The last
-question is the one mentors will love them for asking — it defines the
-learning goals up front and previews Part 6 (the delegation boundary: you
-can only delegate what you could evaluate). The data question previews the
-Ground rules slide near the end.
-:::
 
 ## What this hour is — and isn't
 
@@ -177,26 +136,9 @@ Why: for any *"how do I…?"* question, your best teacher is **the agent itself*
 What an hour *can* give you is the part the agent won't:
 **judgment** — what to delegate, what to demand back, what to check, what to own.
 
-::: {.notes}
-~2 min. Sets expectations and is itself the first lesson: "ask the agent"
-is not a cop-out, it's the actual skill. Literal first prompts they can use:
-"I've never used Claude Code — set yourself up in this project and show me
-the basics" or "teach me enough git to work with you safely." Then the
-honest framing for the hour: mechanics are cheap and self-teachable now;
-judgment is what's scarce. That's why the rest of the talk is about
-management, not menus.
-:::
-
 # Part 1: What you're actually working with {background-color="#800000"}
 
 ![](figures/karpathy_english.png){.nostretch width="52%" fig-align="center"}
-
-::: {.notes}
-The beat: Karpathy again, two years *before* vibe coding — and by now it's
-roughly true. Which is exactly why it's worth one slide on what this
-"English programming language" actually compiles to. Don't read the tweet
-aloud; let it sit, then advance.
-:::
 
 ## Under the hood: a language model
 
@@ -220,23 +162,6 @@ Newer models are better calibrated — they push back and say *"I'm not sure"*
 more than they used to. But: **fluent and confident
 ≠ correct** — least of all on *your* data and code, which it can't verify alone.
 
-::: {.notes}
-~3 min. One slide of theory, no more. Stage 2 is RLHF — reinforcement
-learning from human feedback — say the name once, don't dwell. The framing
-that lands: the model was trained to make the reader happy, not strictly to
-be right; preference training pulls toward agreement and confidence
-(sycophancy). Be honest that this has measurably improved — recent models
-are better calibrated, push back, and say "I'm not sure" more often — so
-don't overclaim, or a student who's watched it disagree with them tunes you
-out. The durable point isn't "it always caves"; it's that tone is not
-evidence — fluent confidence, and confabulation about things it can't
-verify (your data, your code, your file paths), are still real and are the
-more dangerous failure. (Aside if asked: post-training increasingly rewards
-*verifiable* correctness too — tests pass, math checks — the training-side
-mirror of the checkable-target practice in Part 4.) Everything in Part 5
-traces back to this slide.
-:::
-
 ## You've probably met three generations of this
 
 | | Tool | How it works | You delegate... |
@@ -250,12 +175,6 @@ traces back to this slide.
 Generations 1–2: you are the hands, every step passes through you.
 
 Generation 3: the AI is the hands. **That changes your job.** This talk is about generation 3.
-
-::: {.notes}
-~2 min. Quick poll by show of hands: who's used ChatGPT for code? Copilot?
-An agent like Claude Code or Cursor's agent mode? Calibrates the room and
-wakes them up. Expect most hands on chat, few on agents.
-:::
 
 ## What turns a chatbot into an agent
 
@@ -299,18 +218,6 @@ One word you'll hear: the program wrapped around the model — **Claude Code**,
 **Cursor**, **Codex** — is called the **harness**. It supplies the tools and the rules.
 Use whichever you can get: the *management skills* transfer across all of them.
 
-::: {.notes}
-~4 min. The chat workflow makes YOU the loop: paste error, get fix, paste
-next error. An agent closes that loop itself. That's why the unit of
-delegation jumps from "function" to "task" — and why management, not
-prompting, becomes the skill. On harnesses: model = the brain, harness =
-the body and the rules — it decides what the agent can see and do, what
-needs your permission (read those prompts, don't reflexively hit yes), and
-what project instructions it reads automatically (foreshadows AGENTS.md).
-Don't agonize over which one. If running a live demo, this is the natural
-spot for it.
-:::
-
 ## One more concept: the context window
 
 Everything the agent currently knows — your instructions, the files it has
@@ -330,23 +237,6 @@ So anything that has to be **right every time**, you write down in the project �
 where you **control it, version it, and can check it.** That's not a workaround —
 it's *the* system. The single most important habit in this talk falls straight
 out of it: in Part 4, the agent keeps a **lab notebook**.
-
-::: {.notes}
-~2 min. This is the mechanical fact that motivates half the workflow advice
-later (AGENTS.md, lab notebook, provenance files). Frame it now so Part 4
-feels inevitable. The new last line is a deliberate plant: name the lab
-notebook here as the payoff, so when it arrives in Part 4 it lands as "the
-thing he promised" rather than one practice among many. (It's Anna's #1
-slide — see its DO-NOT-CUT note.) On "auto-compact": Claude Code and Codex
-now summarize the old context automatically when the window fills, so the
-session doesn't hard-stop — but compaction is lossy and you don't pick what
-survives, so it actually REINFORCES the thesis: don't rely on its memory,
-within OR across sessions; the record you'll defend belongs in the repo.
-Starting a fresh session for a fresh task is still cleaner than working from
-a compacted one. On cross-session "memory": yes, Claude Code and ChatGPT now
-persist some — say so if asked, but same point: partial, opaque, not
-versioned or auditable. One sentence each; don't belabor it.
-:::
 
 ## What it's genuinely good and bad at
 
@@ -380,21 +270,6 @@ versioned or auditable. One sentence each; don't belabor it.
 The strong column is most of your coding hours this summer — **and it keeps growing.**
 The weak column was always your job — and **stays** yours: it's about *your* context, not the model's horsepower.
 
-::: {.notes}
-~2 min. Honest calibration in both directions: students who've only used
-free chatbots underestimate agents; students who've seen one demo
-overestimate them. Note the strong column is deliberately *task-scale*, not
-snippet-scale — that's the whole point of the agent era and it's how the
-rest of the talk treats the tool (you delegate tasks, not lines). The weak
-column is reframed off "it can't say 'I'm not sure'" (it can now — see the
-under-the-hood slide) and onto the durable gap: it can't know the unknowns
-specific to *your* problem, or check against ground truth it can't see. The
-load-bearing move is the closing line: don't memorize today's strong list,
-it's a moving target — anchor on the weak axis, which is stable because
-it's about your context, not capability. That sets up delegate-vs-own
-(Part 3) and "the boundary moves as you learn" (Part 6).
-:::
-
 # Part 2: Research is a different game {background-color="#800000"}
 
 ## You've been trained on coursework. Research is different.
@@ -418,20 +293,6 @@ it's about your context, not capability. That sets up delegate-vs-own
 - wrong code can **run perfectly** and produce a wrong claim
 - ends when you can **defend** the result
 :::
-:::
-
-::: {.notes}
-~3 min. For students who've never done research, this is the framing that
-matters most: there's no answer key. A bug that crashes is a good bug — it
-announces itself. The dangerous bug runs clean and quietly changes the
-result, and nothing automatic warns you — so "it works" means something
-different from here on, and the checking becomes human judgment (yours
-first, then your mentor's, eventually a reviewer's). Don't oversell "only
-you" — the point is there's no autograder, not that you're alone. Sets up
-Part 5 (failures that look right) and Part 4 (the provenance + lab-notebook
-habits that make wrong claims catchable). The "you'll redo everything"
-motivation for reproducibility now lives where it belongs, on the auditable
-slide in Part 4.
 :::
 
 # Part 3: You are the PI {background-color="#800000"}
@@ -458,15 +319,6 @@ watch what good delegation feels like from below, then apply it from above.
 One difference from a real student: the agent **won't reliably carry the
 lessons forward** unless *you* write them down.
 
-::: {.notes}
-~4 min. The load-bearing slide. Everything in Part 4 — instruction files,
-task sizing, auditing — falls out of taking this analogy seriously. The
-mentor line is the absorbed segue slide: they're the junior party in their
-own research relationship right now, which makes the pattern concrete. The
-"doesn't learn unless you write it down" caveat connects back to the
-context-window slide and forward to AGENTS.md.
-:::
-
 ## The prompt shift
 
 ::: {.columns}
@@ -489,19 +341,6 @@ context-window slide and forward to AGENTS.md.
 . . .
 
 The win isn't *hands-off* — it's **you didn't type it, but you understand it and can defend it.**
-
-::: {.notes}
-~3 min. The reframe (Anna's point): the talk's real enemy is the RIGHT
-failure — vibe-delegating, shipping what you can't vouch for (slide 2, and
-all of Part 6). Micromanaging is the opposite over-correction: you keep
-every detail but gain no leverage. Good delegation threads between — you
-hand off the typing, NOT the understanding. The delegating prompt does five
-jobs: goal, acceptance criteria, process (inspect → plan → implement →
-verify), scope ("smallest thing"), reporting — copy-pasteable, say so. Land
-the closing hard: "I didn't type it, but I understand it and can defend it"
-is the whole talk in a line. The two compressed phrases here — "what would
-convince me" and "propose a plan" — each get their own slide next.
-:::
 
 ## What would convince you?
 
@@ -537,30 +376,6 @@ scraping — what would convince *you* it worked?
 Can't say what would convince you? You're **not ready to delegate** — working
 that out *is* the research.
 
-::: {.notes}
-~2-3 min. Unpacks the "what would convince me" phrase from the prompt shift —
-Anna's note: the abstract phrase needs concrete examples to land. The move:
-replace a vague verb ("make", "clean", "speed up") with an observable test.
-INTERACTION: show the vague column, then read the "Your turn" prompt and
-actually take 2-3 answers from the room out loud (it doubles as a domain
-check — naming analysis/simulation/imaging/scraping lets the non-medical
-students see themselves). THEN click to reveal the right column as "here's
-how I'd make those checkable." Don't reveal early — the pause is the point,
-and the answers tell you how statsy/ML the room is. If they're stuck, hand
-them the first one ("make a plot" -> "plots x vs y, one series per group,
-axes labeled"). That plot criterion needs NO reference figure — the
-spec itself is the check; if you happen to have one, "reproduces Fig. 2 within
-rounding" also works. The model one operationalizes the weasel word "good":
-a pre-set metric margin (≥0.02 AUC — swap in your metric) AND robustness to a
-new seed. Each right-column example seeds something later — "same outputs, just
-faster" is the refactor invariant; "survives a new seed" is the Part 5 seed
-story; the row-count one is the silent-N failure (kept the 412 but dropped
-"patients" so it reads for any dataset). This is the single highest-leverage
-habit in the talk — say so. It's also the input to practice 4 (give it a
-checkable target): a runnable acceptance criterion IS the target the agent
-iterates against.
-:::
-
 ## Agree on the plan before any code
 
 For anything non-trivial: **"Plan first — don't write code yet."**
@@ -581,19 +396,6 @@ You're checking three things:
 . . .
 
 Five minutes on the plan beats an hour reviewing code that solved the **wrong problem.**
-
-::: {.notes}
-~2 min. Unpacks "propose a plan" and elevates it to a habit, because it's
-one of the highest-leverage things they'll learn: the cheapest place to
-catch a misunderstanding is BEFORE the code exists. A plan is a paragraph
-you read in a minute; 300 lines of confidently-wrong code is an hour you
-won't get back. The three checks are the review surface — especially
-"assumptions match your data," where the model's plausible-but-wrong guesses
-hide (under-the-hood slide). For a big task, have it write the plan to a file
-(DESIGN.md) and commit it, so the implementation can be checked against what
-you agreed to. Pairs with "demand the full loop": the plan is the front
-gate, the report is the back gate.
-:::
 
 ## What to delegate, what to own
 
@@ -628,12 +430,6 @@ decision-maker.
 Rough rule: if the task has a checkable "done", delegate it.
 If the task **is** the judgment, it's yours.
 
-::: {.notes}
-~3 min. "Argue against my result" is a genuinely great use: the agent is an
-excellent devil's advocate precisely because it's fluent and tireless. The
-failure is letting it render the verdict, not letting it argue.
-:::
-
 # Part 4: Running the lab {background-color="#800000"}
 
 [**Eight habits for delegating work you can still vouch for** — none of them
@@ -655,16 +451,6 @@ For agent work it's non-negotiable — the agent **edits your files and runs com
 The whole point is the safety net: **revert anything, trace everything** — so you can
 delegate boldly. 
 
-::: {.notes}
-~3 min. Many will know git from class; some won't. The reframe: git isn't a
-chore, it's the safety net that makes delegation safe — you can revert
-anything and trace any result to the commit that made it. Don't sell
-diff-reading as required review (Anna doesn't read her code); if a student
-finds reading diffs helps them learn, great — but the real verification is on
-the outputs (Part 5). Agents write good commit messages — make them do it;
-those commits are also your provenance trail (links to the auditable practice).
-:::
-
 ## 2. Write the onboarding doc: `AGENTS.md`
 
 A plain text file in your project that the harness **reads automatically at
@@ -682,13 +468,6 @@ Put in it what you'd tell a new lab member on day one:
 . . .
 
 Start with ten lines. How it grows is the interesting part →
-
-::: {.notes}
-~3 min. This is the payoff of the context-window slide: writing things down
-isn't bureaucracy, it's literally the only memory mechanism the agent has.
-Write it WITH the agent: "interview me about this project and draft an
-AGENTS.md" is a great first task.
-:::
 
 ## Where the rules come from: something goes wrong *once*
 
@@ -710,17 +489,6 @@ can't happen again.
 > "Report the **N after every filtering step**. Any change in counts
 > between runs must be **called out explicitly**."
 
-::: {.notes}
-~2 min. This is the single most important habit in the talk — say so. The
-fix-it-and-move-on instinct wastes the mistake; the rule turns it into
-permanent infrastructure. Note the shape: each rule is broader than the
-incident (not "don't load data_old.csv" but "name every input, always").
-A third example, cut for time: summary said "works perfectly" over three
-unexamined warnings → "every report ends with a remaining-uncertainty
-section" — that idea gets its own slide ("Demand the full loop").
-Part 5 has the full worked example (the seed story) and names the pattern.
-:::
-
 ## Inside a real one: excerpts from my `AGENTS.md`
 
 > "Fail fast. No silent fallbacks, no hidden defaults."
@@ -734,22 +502,6 @@ Part 5 has the full worked example (the seed story) and names the pattern.
 
 > "Don't take the easy patch when it **weakens the science.**"
 > [— preserve the signal first; optimize the runtime second]{.smallgray}
-
-::: {.notes}
-~3 min. All four are real, lightly trimmed, from ONE file — my HFDP
-project's AGENTS.md (~100 rules grown over a year). Nearly every rule is a
-scar: something went wrong once, I caught it, and the general version went
-in the file (the flywheel, Part 5). Point out the range — it climbs from
-code hygiene (fail fast) and comparison hygiene (one knob) up to scientific
-judgment: only run decision-worthy experiments, and never let a convenient
-shortcut quietly corrupt the result (that last one is the Part 5 thesis as a
-config rule). The provenance/README rule lives on the auditability slide
-instead — deliberately not said twice. A favorite cut for
-space: "When comparing runs, state the shared setup and the differing knob
-before the takeaway" — reports arrive reviewable. The agent reads all of it
-every single session. Theirs starts at ten lines; this is what it compounds
-into.
-:::
 
 ## When a lesson outgrows the project: **skills**
 
@@ -772,24 +524,6 @@ I've published mine, free to install — [**uchicago-dsi/ai-sci-skills**](https:
 - `$skeptical-labmate` — **stress-test** a claim or baseline
 - `$lab-notebook` / `$handoff` — records that stay **restartable**
 
-::: {.notes}
-~3 min. The technical point to land (Anna's): a skill is a folder whose
-header is a tiny title + description — those few tokens are always in
-context, so the agent knows the skill EXISTS; the full body (often long)
-loads only when the description matches the task. That's "progressive
-disclosure" — the reason you DON'T hand-invoke them (the old "type
-$sensemaking" move): you make them available, the agent self-selects.
-Payoff: the same vetted workflow fires every conversation instead of the
-model improvising a new one, and you're not paying tokens to paste the whole
-workflow into every prompt. The arc completes here — a rule fixes one
-mistake, AGENTS.md compounds rules for one project, skills package what
-generalizes ACROSS projects (the list is this talk in tool form). Install =
-clone the repo, copy/symlink folders into the skills dir (~/.claude/skills,
-~/.cursor/skills, ...); README has per-tool commands. Also in the repo:
-$experiment-design, $rut-breaker, and $slurm / $job-babysitting for cluster
-work. Keep shared skills generic; project facts stay in AGENTS.md.
-:::
-
 ## 3. Demand the full loop, not just code
 
 Ask for **inspect → plan → implement → verify** — and a report at the end:
@@ -803,13 +537,6 @@ Ask for **inspect → plan → implement → verify** — and a report at the en
 
 "Done, everything works" is a **worse** answer than
 "done, but I assumed the dates are UTC — you should check that."
-
-::: {.notes}
-~3 min. "Remaining uncertainty" is the item students will skip and the one
-that matters most — it's also the item that fights the model's natural
-overconfidence (slide: under the hood). Put this four-item report format in
-AGENTS.md so it happens every session automatically.
-:::
 
 ## 4. Give it a target it can check itself
 
@@ -843,33 +570,6 @@ you** — then: *"keep iterating until it passes."*
 Now **the agent** iterates, not you — you set the bar **once**.
 [*Not a new gadget: it's the Part 1 agent-loop pointed at a finish line you drew — and only where "right" is checkable.*]{.smallgray}
 
-::: {.notes}
-~3 min. THE distinction to make out loud, because students conflate them:
-the "loop" from Part 1 is what makes an agent an agent (look → act → observe
-→ repeat). This slide is NOT a second kind of loop — it's that same loop
-with a *finish line you supply*. So I'm not naming a new mechanism; the
-thing worth naming is the **check** (the target), not the loop.
-
-The trigger to teach: the moment you catch yourself correcting the *same
-class of thing* more than once or twice, stop — that's the signal to build a
-check instead of refereeing another round. You are a slow, expensive,
-inconsistent error message; an assertion is instant and never gets tired.
-
-Free vs. build is the user's key point: for a crash the agent already has
-the signal (the stack trace) and will grind on it autonomously for ages.
-For "is this result right?" there is no built-in signal — you manufacture
-one: an assertion, a diff against output you verified by hand, a metric on
-held-out data, a synthetic case with a known answer (callback to "verify on
-something you can check," Part 6). This is the executable version of "what
-would convince me" from the prompt-shift slide.
-
-The guardrail reconciles with the coursework slide ("in research YOU are the
-checker") and delegate-vs-own: you build autograders for the *checkable
-sub-tasks* and hand off the iteration; the final claim has no autograder, so
-that judgment stays yours. Don't let "iterate until it passes" become
-"optimize until the metric is gamed" — eyeball the result too.
-:::
-
 ## 5. Make every result auditable
 
 One **result** → **one folder** → a `README` of how it was made. A "result" is
@@ -887,23 +587,6 @@ The rule from my own `AGENTS.md`, sized for a summer project — paste it into y
 
 Why: week-7 you, bug found, mentor asking "which version made this figure?" —
 this turns a crisis into a 10-minute rerun.
-
-::: {.notes}
-~3 min. The motivation — say it aloud: you WILL redo everything (the data
-gets updated, a week-7 bug, the mentor asks "what if we exclude those
-samples?"), so a result you can't regenerate is one you can't trust;
-reproducibility here is self-defense, not an ideal. The agent
-does this bookkeeping happily and consistently — it costs you nothing after
-the rule is in AGENTS.md: from then on every result folder documents itself,
-and "reported as ready" is gated on the README existing. ("Before the result
-is reported" is the load-bearing phrase — provenance as part of the
-definition of done, not cleanup.) Keep the framing GENERAL: a "result" is a
-model run, a simulation, a cleaned dataset, a scraper pass, a figure, a
-deployed tool — name a couple that match the projects in the room so the
-non-modeling students see themselves. (The HPC version — running a whole
-campaign of these autonomously — gets its own slide at the end of Part 4.)
-This discipline is rare even among pros; a student who has it stands out.
-:::
 
 ## 6. Make it keep the lab notebook
 
@@ -927,29 +610,6 @@ The agent starts each session **fresh** — so the notebook is its memory. But i
 you walk your **mentor** through *what you did and what you found*, and by August
 it's your **poster**, written as you went.
 
-::: {.notes}
-★ Anna's view: this is the MOST IMPORTANT slide in the talk — never cut it.
-It's the physical home of the whole thesis: the context-window slide says you
-can't rely on its memory; the PI slide says it won't carry lessons unless you
-write them down; the flywheel says the learning lives in the repo. THIS is
-where it lives. Slow down here; it deserves more time than its ~2 min, not less.
-
-The distinction is the teaching point: the README answers "how do I
-reproduce run #14?"; the notebook answers "what have we learned, and what
-should we try next?" Students conflate them and end up with neither. The
-notebook is the direct answer to the context-window slide — the agent wakes
-up empty every session, so the running record IS its memory; "read the lab
-notebook and the last three result READMEs" is a great session-opener
-prompt. Push the STUDENT payoff hard, not just the agent's memory: it stops
-you re-running dead ends (you can see what you already tried and ruled out),
-and it's what you scroll back through to prep a mentor meeting — "here's what
-I did and what I found." Same record, three jobs: the agent's memory, your
-anti-circles log, your mentor-update / poster skeleton. Mine doubles as the skeleton of every update I send collaborators
-and, eventually, the poster. Packaged as the $lab-notebook / $handoff
-skills. Keep it append-only and dated; let it grow, prune it on the
-maintenance pass.
-:::
-
 ## Inside a real one: a `LAB_NOTEBOOK.md` entry
 
 One dated, append-only entry — what the agent appends after a run:
@@ -969,19 +629,6 @@ Next:     add the lab values Dr. K mentioned; re-run before the GNN
 Every entry, the same four moves:
 **what I tried · what surprised me · what I now believe · what's next.**
 
-::: {.notes}
-~2 min. Make it concrete — read the entry aloud; THIS is what "the learning
-lives in the repo" actually looks like. Three things to point at: (1) the
-**Tried** line links straight to the run's README — notebook and provenance
-(practice 5) interlock. (2) The **Surprise** line is the gold: an anomaly
-the agent flagged becomes a mentor question becomes a rule — the flywheel in
-one line. (3) **Believe / Next** is what students skip and exactly what lets
-August-you write the poster without reconstructing the summer from memory.
-Put the four-move format in AGENTS.md so every entry has the same shape.
-This is the companion to the AGENTS.md "Inside a real one" slide, and it's
-the second half of Anna's #1 idea — give it the time.
-:::
-
 ## 7. Maintain the workflow itself
 
 Weeks of agent work accumulate **slop**: duplicate scripts, dead code,
@@ -997,12 +644,6 @@ Every week or two, delegate a cleanup pass:
 
 Ground rule for cleanup passes: **results must not change** —
 only make the next experiment easier to run and audit.
-
-::: {.notes}
-~2 min. A nice beat: the agent cleaning up after the agent, and "treat the
-workflow as something you maintain, not something you set up once."
-(Was a trim candidate; Anna wants it kept.)
-:::
 
 ## 8. Let it run the campaign — overnight
 
@@ -1024,23 +665,6 @@ You wake up to a table of **reproducible** runs and a notebook saying **what won
 ⚠️ Autonomy multiplies **mistakes** too — a wrong metric or a silent bug now runs 200 times.
 **Pilot one run, audit it, *then* scale.** *(Which is exactly Part 5 →)*
 
-::: {.notes}
-~3 min, and the energy peak of Part 4 — but scope it out loud so the
-tool-builders don't feel left out: this is the model-training / simulation
-crowd (CNNs, simulation-based inference, materials/astro/neuro). The reason
-it works is that it's the SYNTHESIS of the practices before it: the success
-metric IS the checkable target (practice 4); each run self-documents
-(practice 5); the notebook logs the thread (practice 6). Strip those away
-and autonomy is reckless; with them it's a force multiplier — the agent runs
-a campaign you can fully audit afterward. Skills: $slurm / $job-babysitting.
-The guardrail is the bridge to Part 5: the same autonomy that runs 200 good
-experiments runs 200 bad ones if the metric is wrong or the data has a
-silent bug — the seed-that-didn't-vary story at campaign scale. So pilot on
-a single run, audit it with the checklist, THEN let it loose.
-[Anna: drop in a real overnight-campaign anecdote if you have one — a night
-it found something, or a night the wrong metric burned the compute.]
-:::
-
 # Part 5: When it goes wrong {background-color="#800000"}
 
 ## It will be wrong in ways that *look* right
@@ -1058,16 +682,6 @@ don't crash — they run clean and lie quietly:
 
 Don't go hunting in the code — these surface only in the **outputs**: the
 **row counts**, the **file actually loaded**, the **config**, the **summary's wording**.
-
-::: {.notes}
-~3 min. The section that earns the talk its keep — slow down. Every one of
-these four is a failure mode I have actually hit. The point (Anna's): don't
-counsel them to read the code — you probably won't, and these bugs aren't IN
-the code anyway, they're in what it produced. Each maps to a check: rows →
-counts; wrong file → the path actually loaded; hidden assumption → the
-config; overconfident summary → the wording. That's the make-auditing-cheap
-checklist two slides on.
-:::
 
 ## Case study: the seed that didn't vary
 
@@ -1097,18 +711,6 @@ The fix wasn't "be more careful." It was a new rule written into `AGENTS.md`:
 You can't list the failure modes in advance — **harvest them**.
 By August, your `AGENTS.md` is institutional memory.
 
-::: {.notes}
-~4 min. Tell it as a story. Note for the room: the agent didn't disobey — it
-did the literal thing asked. "Rerun three times" was underspecified, and the
-gap got filled with the wrong default. Then point at the *shape* of the fix:
-not a one-off correction but the general rule, written where every future
-session reads it — the same move as "Where the rules come from" in Part 4;
-name it as one habit. The harvest line reframes errors as compounding
-assets, and answers "can I rely on its memory?": no — so the learning lives
-in the repo, where you control and version it; the thing real labs take years
-to build.
-:::
-
 ## Make auditing cheap
 
 Working at a higher level means it's easy to miss details.
@@ -1123,12 +725,6 @@ The fix is **not** micromanagement — it's a short checklist you *always* run:
 . . .
 
 Five minutes per task. That's the entire price of staying in charge.
-
-::: {.notes}
-~2 min. If auditing is expensive, they'll skip it — so the checklist is
-deliberately short. Highest value per second: the counts. If N changed and
-you don't know why, stop everything until you do.
-:::
 
 # Part 6: The student catch {background-color="#800000"}
 
@@ -1146,21 +742,6 @@ The oldest version of the honest answer — from radiology, 2017:
 . . .
 
 **Become the somebody!**
-
-::: {.notes}
-~2 min. Name the anxiety directly — they're all thinking it. Provenance
-note (and a live demo of the talk's thesis): this quote usually circulates
-attributed to Karpathy or Jensen Huang. We checked — there is NO primary
-source for a Karpathy version; it's a misattribution that *sounds right*.
-The oldest traceable ancestor is the Langlotz tweet shown (real, verified,
-Feb 2017); Baldwin said the general version at WEF in May 2023; Huang's
-famous variant came at Milken in 2025. If the room is engaged, say the
-meta-beat out loud: a confident, plausible, wrongly-attributed quote is
-exactly "sounds right vs. is right" — we verified it before putting it on
-a slide, which is the whole talk. Then land the sincere version: the
-premium moves to people who can delegate well and verify — Part 6 is about
-becoming that person rather than outsourcing your way around it.
-:::
 
 ## Don't delegate the learning
 
@@ -1184,20 +765,6 @@ skewed data** and you'd never know. So how do you find the gap?
 Now *"I assumed the groups are roughly normal"* is **on the table** — a gap you can
 learn, or take to your mentor. **That's how the boundary moves.**
 
-::: {.notes}
-~3 min. Anna's point: "only delegate what you can evaluate" is circular if you
-don't know what you can't evaluate. The resolution is the method on the slide —
-you don't have to spot blind spots cold; you make the agent ENUMERATE its
-assumptions, decisions, and failure modes (it's good at this — it knows the
-standard caveats even when you don't), and your gaps surface as the choices you
-didn't know existed and the explanations you can't follow. "Could I defend this
-to my mentor?" is the gut check: if you'd go hand-wavy, that's the gap. This
-converts unknown-unknowns into known-unknowns, which you then learn (next slide:
-make it a tutor) or escalate to your mentor — and running that loop is exactly
-how the boundary moves. Domain-swap the t-test if the room isn't statsy:
-"95% accuracy" on imbalanced data, or a join that silently drops rows.
-:::
-
 ## Make it a tutor, not a vending machine
 
 You have unlimited access to a patient expert with no ego and no office hours.
@@ -1212,12 +779,6 @@ Most students only ever ask it for *output*. Ask it to *teach*:
 
 **For a student, the explanation is worth more than the code.**
 
-::: {.notes}
-~2 min. This is how delegation and learning coexist instead of competing.
-Reviewing the agent's diffs critically teaches code reading faster than
-writing code alone ever did — you see ten patterns a day instead of one.
-:::
-
 ## Verify on something you can check
 
 Before trusting it on the case you *can't* check,
@@ -1231,12 +792,6 @@ run it on a small case where you **already know the answer**.
 
 Right on the known case → it has *earned* some trust on the unknown one.
 
-::: {.notes}
-~2 min. The single most transferable habit in the talk — it outlives any
-particular tool. Synthetic data with a planted effect is the research
-version of a unit test, and agents are great at generating it for you.
-:::
-
 ## Ground rules
 
 - **Your data doesn't have to leave.** Your prompts and code go to a company's
@@ -1248,21 +803,6 @@ version of a unit test, and agents are great at generating it for you.
   **error message**, pseudocode — a tutor and planner, no source handed over.
 - **You own what you submit.** Every line is yours, whoever typed it. "The AI
   did it" is never an excuse.
-
-::: {.notes}
-~2 min. Say the data point plainly and without drama — we're at a medical
-campus; "help me write the code" is fine, "here's the dataset, analyze it"
-is the thing you never do with sensitive data. On the code bullet: don't
-imply unpublished = forbidden. Most research code is unpublished — that's the
-normal case, not a red flag. The only rule is get the mentor's OK before
-sending the project's source to a cloud tool (a promise I made to a mentor
-whose student is on not-yet-published code). Make the carve-out loud or they
-hear "no AI at all": they can still use it as a tutor/planner/debugger
-WITHOUT the source — explain a concept, debug from the error text, sketch
-pseudocode, plan the workflow. And mentor rules override me, always. The
-accountability point closes the loop with the opener: I own every claim on
-these slides.
-:::
 
 # Part 7: Getting started {background-color="#800000"}
 
@@ -1281,11 +821,6 @@ Pick a **small, annoying, real** task — about what you'd bring to **one mentor
 Don't start with the big open-ended project.
 **Start where you already know what "done" looks like.**
 
-::: {.notes}
-~2 min. The whole talk compressed into one exercise. If they do only this,
-the hour was worth it.
-:::
-
 ## If you remember three things
 
 1. **You are the PI.** Delegate implementation; own the question, the design, and the interpretation.
@@ -1300,11 +835,3 @@ Questions?
 [Claude Code](https://code.claude.com/docs/en/best-practices) ·
 [Codex](https://platform.openai.com/docs/codex) ·
 [Cursor](https://docs.cursor.com/agent/modes)]{style="font-size:0.55em; color:#667;"}
-
-::: {.notes}
-Leave ~5 min. Seed question if the room is quiet: "What's the smallest task
-in your project you could delegate tomorrow — and how would you know if it
-came back wrong?"
-TODO (Anna): check what tool access the REU students actually have
-(free tiers / edu programs) and say it out loud here.
-:::
