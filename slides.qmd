@@ -18,7 +18,7 @@ execute:
   freeze: auto     # cache results so a rebuild doesn't recompute everything
 ---
 
-## Full disclosure {.center}
+## Is generative AI good or bad? {.center}
 
 <!--
 CHEAT SHEET (delete before presenting)
@@ -39,11 +39,15 @@ git if not demoing), "what your summer produces" (folded into the
 coursework slide), flywheel (folded into the seed story), third
 where-rules example, "norms vary" ground rule, various line-level
 tightening. Kept by request: workflow-maintenance slide, three-generations
-slide. ★ DO NOT CUT — the lab-notebook slide (practice 6) is, in Anna's
+slide. Disclosure demoted to a spoken opener said over the TITLE slide (no
+slide of its own; the reminder lives in this good/bad slide's notes). The
+good/bad acknowledgment now comes BEFORE the vibe/delegated definition. ★ DO
+NOT CUT — the lab-notebook slide (practice 6) is, in Anna's
 view, the single most important idea in the whole talk. Never propose
 trimming it; if anything, give it MORE room. Rough timing (~58-60 min —
 fits the hour if Q&A can spill a little):
-  ~5   hook + reframe
+  ~5   "is genAI good or bad?" acknowledgment + reframe
+        (disclosure is a spoken opener over the title slide, no slide)
   ~11  part 1: what you're working with (LLMs, agents, harnesses)
   ~4   part 2: research is a different game
   ~13  part 3: the mental model (+ acceptance-criteria and plan-first slides)
@@ -56,16 +60,41 @@ NOTE: this comment must live INSIDE a slide (below a ## heading) — any
 content before the first heading becomes a blank slide in reveal.js.
 -->
 
-This talk was prepared the way it recommends:
+. . .
 
-I sketched the argument. My AI agent drafted the slides.
+**Real costs** — energy and water, job disruption, concentration of power,
+consent for training data.
 
-**I own all the claims.**
+**Real benefits** — productivity/speed across knowledge work, wider access, etc.
+
+. . .
+
+These are big questions, and society is still working them out. **That's not
+what today is about** — but I'm not pretending they're settled.
+
+. . .
+
+Today's narrower question: *if* you choose to use these tools, how do you use
+them **responsibly, and well?**
 
 ::: {.notes}
-~1 min. Open with this — it's the whole talk in miniature. The agent did the
-typing; I did the thinking and the reviewing. If anything on these slides is
-wrong, that's on me, not the tool. That division of labor is the next hour.
+~1.5 min. TITLE-SLIDE OPENER — say this over the title slide as you walk out,
+before advancing: "This talk was prepared the way it recommends. I sketched the
+argument; my agent drafted the slides — I own all the claims." That's the whole
+hour in miniature: the agent did the typing, I did the thinking and the
+reviewing. If anything here is wrong, that's on me, not the tool. Then advance.
+
+INTERACTIVE (this slide): "Raise your hand if you think genAI is good for the
+world. Now raise your hand if you think it's bad. … If both hands went up,
+good — that's the honest answer." Read the room; if it's stiff, skip the hands
+and just say it.
+
+Why this slide exists: a lot of you have real, considered objections — that's
+why people boo it at commencement. I won't stand here and pretend it's
+uncomplicated. The costs are real, the benefits are real, and nobody has fully
+resolved this. Today is deliberately narrower: not "should this exist," but
+"given that it does and you may use it, how do you do that well." We hit the
+career version of the worry head-on near the end (the "take my job" slide).
 :::
 
 ## Why not call it "vibe coding"?
@@ -77,17 +106,15 @@ wrong, that's on me, not the tool. That division of labor is the next hour.
 Fine for a throwaway script —
 not fine when someone has to
 **trust the result**.
-
-. . .
-
-*Delegated coding*: the AI does
-the work; **you stay in charge
-and accountable**.
 :::
 ::: {.column width="48%"}
 ![](figures/karpathy_vibe_coding.png){width="100%"}
 :::
 :::
+
+. . .
+
+*Delegated coding*: the AI does the work; **you stay in charge and accountable**.
 
 . . .
 
@@ -112,8 +139,8 @@ relationship.
 
 1. *"Are you OK with me using AI tools — and which ones, for what?"*
    (code? analysis? writing?)
-2. *"What are the rules for our **data** — what can the tools see? —
-   and how should I **disclose** AI use (code, repo, poster)?"*
+2. *"What are the rules for our **data** — and any **unpublished code** —
+   what can the tools see, and how should I **disclose** AI use?"*
 3. *"By the end of the summer, **which parts of this project should I be
    able to explain** entirely on my own?"*
 
@@ -134,13 +161,16 @@ Ground rules slide near the end.
 
 This is **not a how-to workshop**. No tool walkthrough, no syntax, no setup guide.
 
+[And *which* tool? Don't agonize — they're all good, the "best" shifts monthly and
+differs by person and project. Try a few; use whatever your school gives you
+cheapest access to.]{.smallgray}
+
 . . .
 
 Why: for any *"how do I…?"* question, your best teacher is **the agent itself** —
 
 - it knows the current version of the tool (these change *monthly*; slides don't)
 - it answers *your* question, on *your* project, at the moment you're stuck
-- asking it **is** the practice — the best way to learn this is to do it
 
 . . .
 
@@ -232,20 +262,29 @@ wakes them up. Expect most hands on chat, few on agents.
 An agent = a language model + **tools** + a **loop**.
 
 ::: {.columns}
-::: {.column width="50%"}
+::: {.column width="46%"}
 **Tools** — actions it can take in your project:
 
 - read and edit files
 - run shell commands
 - search your codebase and the web
 :::
-::: {.column width="50%"}
-**The loop:**
+::: {.column width="54%"}
+**The loop** — the engine:
 
-1. look at the task & the code
-2. take an action
-3. **observe what happened**
-4. repeat until done (or stuck)
+```{mermaid}
+%%| fig-align: center
+%%{init: {'theme':'base','themeVariables':{'lineColor':'#800000','fontSize':'19px','edgeLabelBackground':'#ffffff'}}}%%
+flowchart TD
+  A(["look at task & code"]) --> B(["take an action"])
+  B --> C(["observe what happened"])
+  C -->|not done| A
+  C -->|done / stuck| D(["stop"])
+  classDef cool fill:#ffffff,stroke:#800000,stroke-width:2px,color:#222222;
+  classDef hot fill:#800000,stroke:#800000,stroke-width:2.5px,color:#ffffff;
+  class A,B,D cool
+  class C hot
+```
 :::
 :::
 
@@ -281,7 +320,7 @@ read, the commands it has run — sits in its **context window**: its working me
 
 Three consequences you'll feel immediately:
 
-- it's **finite** — long sessions degrade; fresh task, fresh session
+- it's **finite** — when it fills, the tool **auto-compacts** (summarizes to keep going), but that's **lossy and silent**: details quietly drop
 - each session starts **fresh** — and any "memory" it keeps is partial and **not yours to audit**
 - it only knows what it has **read** — it won't know about your data's quirks unless told
 
@@ -298,27 +337,34 @@ later (AGENTS.md, lab notebook, provenance files). Frame it now so Part 4
 feels inevitable. The new last line is a deliberate plant: name the lab
 notebook here as the payoff, so when it arrives in Part 4 it lands as "the
 thing he promised" rather than one practice among many. (It's Anna's #1
-slide — see its DO-NOT-CUT note.) On "memory": yes, Claude Code and ChatGPT
-now persist some memory across sessions — say so if asked, but the point
-holds: that memory is partial, opaque, and not versioned or auditable, so the
-record you'll defend in a paper belongs in the repo where you control it. One
-sentence; don't belabor it.
+slide — see its DO-NOT-CUT note.) On "auto-compact": Claude Code and Codex
+now summarize the old context automatically when the window fills, so the
+session doesn't hard-stop — but compaction is lossy and you don't pick what
+survives, so it actually REINFORCES the thesis: don't rely on its memory,
+within OR across sessions; the record you'll defend belongs in the repo.
+Starting a fresh session for a fresh task is still cleaner than working from
+a compacted one. On cross-session "memory": yes, Claude Code and ChatGPT now
+persist some — say so if asked, but same point: partial, opaque, not
+versioned or auditable. One sentence each; don't belabor it.
 :::
 
 ## What it's genuinely good and bad at
 
 ::: {.columns}
-::: {.column width="50%"}
+::: {.column width="48%"}
 **Strong — often better than you'd expect**
 
 - changes across **many files**, not just snippets
-- a bug **end to end**: reproduce → hypothesize → fix
-- learning an **unfamiliar codebase** and explaining it back
+- a bug **end to end**: reproduce → fix
+- learning an **unfamiliar codebase**, explaining it back
 - messy notebook → clean, **reproducible** script
-- the tedious-but-defined: **parsers, plots, tests, wrangling**
+- tedious-but-defined: **parsers, tests, wrangling**
+- **making code run faster** (profiling, vectorizing)
 - wiring up **cluster jobs** (SLURM)
 :::
-::: {.column width="50%"}
+::: {.column width="4%"}
+:::
+::: {.column width="48%"}
 **Weak — exactly where research lives**
 
 - your **intent** — what you didn't say
@@ -469,17 +515,22 @@ concretely enough to check.
 - "make a plot of the results"
 - "clean up the data"
 - "speed up this script"
-- "build a model for X"
+- "build a good model for X"
 :::
 ::: {.column width="50%"}
+::: {.fragment}
 **Acceptance criteria** — you can
 
-- "reproduces Fig. 2 within rounding"
-- "row count = 412 patients, or tell me why not"
+- "plots **x vs y**, one series per group, axes labeled"
+- "row count = 412 in, 412 out — or tell me why not"
 - "**same outputs**, just faster"
-- "beats the baseline — and **survives a new seed**"
+- "**beats baseline +0.02 AUC** — survives a new seed"
 :::
 :::
+:::
+
+**Your turn:** pick a task from *your* project — analysis, simulation, imaging,
+scraping — what would convince *you* it worked?
 
 . . .
 
@@ -487,15 +538,27 @@ Can't say what would convince you? You're **not ready to delegate** — working
 that out *is* the research.
 
 ::: {.notes}
-~2 min. Unpacks the "what would convince me" phrase from the prompt shift —
+~2-3 min. Unpacks the "what would convince me" phrase from the prompt shift —
 Anna's note: the abstract phrase needs concrete examples to land. The move:
 replace a vague verb ("make", "clean", "speed up") with an observable test.
-Each right-column example seeds something later — "same outputs, just
+INTERACTION: show the vague column, then read the "Your turn" prompt and
+actually take 2-3 answers from the room out loud (it doubles as a domain
+check — naming analysis/simulation/imaging/scraping lets the non-medical
+students see themselves). THEN click to reveal the right column as "here's
+how I'd make those checkable." Don't reveal early — the pause is the point,
+and the answers tell you how statsy/ML the room is. If they're stuck, hand
+them the first one ("make a plot" -> "plots x vs y, one series per group,
+axes labeled"). That plot criterion needs NO reference figure — the
+spec itself is the check; if you happen to have one, "reproduces Fig. 2 within
+rounding" also works. The model one operationalizes the weasel word "good":
+a pre-set metric margin (≥0.02 AUC — swap in your metric) AND robustness to a
+new seed. Each right-column example seeds something later — "same outputs, just
 faster" is the refactor invariant; "survives a new seed" is the Part 5 seed
-story; the row-count one is the silent-N failure. This is the single
-highest-leverage habit in the talk — say so. It's also the input to practice
-4 (give it a checkable target): a runnable acceptance criterion IS the
-target the agent iterates against.
+story; the row-count one is the silent-N failure (kept the 412 but dropped
+"patients" so it reads for any dataset). This is the single highest-leverage
+habit in the talk — say so. It's also the input to practice 4 (give it a
+checkable target): a runnable acceptance criterion IS the target the agent
+iterates against.
 :::
 
 ## Agree on the plan before any code
@@ -573,6 +636,9 @@ failure is letting it render the verdict, not letting it argue.
 
 # Part 4: Running the lab {background-color="#800000"}
 
+[**Eight habits for delegating work you can still vouch for** — none of them
+are about typing code.]{style="color:#ffffff;"}
+
 ## 1. Put the project in git
 
 Git = version control: **snapshots of your project** you can compare and restore.
@@ -587,8 +653,7 @@ For agent work it's non-negotiable — the agent **edits your files and runs com
 . . .
 
 The whole point is the safety net: **revert anything, trace everything** — so you can
-delegate boldly. *(Reading the diff is a fine way to learn what changed; the real check
-is the **outputs**, not the lines — Part 5.)*
+delegate boldly. 
 
 ::: {.notes}
 ~3 min. Many will know git from class; some won't. The reframe: git isn't a
@@ -664,10 +729,6 @@ Part 5 has the full worked example (the seed story) and names the pattern.
 > "Do not call something an A/B test unless **only one knob changed**."
 > [— guards every comparison I'll ever be shown]{.smallgray}
 
-> "Every new run directory must contain a `README` provenance note
-> **before the run is reported as ready**."
-> [— auditability isn't optional, it's the definition of done]{.smallgray}
-
 > "Don't run experiments that **won't change the decision.**"
 > [— design for the result that changes your next move]{.smallgray}
 
@@ -675,14 +736,15 @@ Part 5 has the full worked example (the seed story) and names the pattern.
 > [— preserve the signal first; optimize the runtime second]{.smallgray}
 
 ::: {.notes}
-~3 min. All five are real, lightly trimmed, from ONE file — my HFDP
+~3 min. All four are real, lightly trimmed, from ONE file — my HFDP
 project's AGENTS.md (~100 rules grown over a year). Nearly every rule is a
 scar: something went wrong once, I caught it, and the general version went
 in the file (the flywheel, Part 5). Point out the range — it climbs from
-code hygiene (fail fast) and comparison hygiene (one knob) and provenance
-(the README) up to scientific judgment: only run decision-worthy
-experiments, and never let a convenient shortcut quietly corrupt the result
-(that last one is the Part 5 thesis as a config rule). A favorite cut for
+code hygiene (fail fast) and comparison hygiene (one knob) up to scientific
+judgment: only run decision-worthy experiments, and never let a convenient
+shortcut quietly corrupt the result (that last one is the Part 5 thesis as a
+config rule). The provenance/README rule lives on the auditability slide
+instead — deliberately not said twice. A favorite cut for
 space: "When comparing runs, state the shared setup and the differing knob
 before the takeaway" — reports arrive reviewable. The agent reads all of it
 every single session. Theirs starts at ten lines; this is what it compounds
@@ -779,7 +841,7 @@ you** — then: *"keep iterating until it passes."*
 . . .
 
 Now **the agent** iterates, not you — you set the bar **once**.
-[*Not a new gadget: it's the agent-loop from Part 1 pointed at a finish line you drew. And only when "right" is checkable — when it isn't, that's the judgment you own.*]{.smallgray}
+[*Not a new gadget: it's the Part 1 agent-loop pointed at a finish line you drew — and only where "right" is checkable.*]{.smallgray}
 
 ::: {.notes}
 ~3 min. THE distinction to make out loud, because students conflate them:
@@ -995,7 +1057,7 @@ don't crash — they run clean and lie quietly:
 . . .
 
 Don't go hunting in the code — these surface only in the **outputs**: the
-**counts**, the **file actually loaded**, the **config**, the **summary's wording**.
+**row counts**, the **file actually loaded**, the **config**, the **summary's wording**.
 
 ::: {.notes}
 ~3 min. The section that earns the talk its keep — slow down. Every one of
@@ -1054,7 +1116,7 @@ The fix is **not** micromanagement — it's a short checklist you *always* run:
 
 - the final **figure or table** — does it pass a smell test?
 - the **command**, the **inputs actually loaded**, the **row counts** —
-  could you rerun it? did N change? why?
+  could you rerun it? did the dataset change size? why?
 - **what differs between runs** — seeds, configs, data versions
 - the report's **uncertainty note** — does the language outrun the evidence?
 
@@ -1177,18 +1239,29 @@ version of a unit test, and agents are great at generating it for you.
 
 ## Ground rules
 
-- **Your data does not have to leave.** Your prompts and code go to a company's
-  servers; your data doesn't have to. Never point a cloud tool at patient
-  data, regulated data, or anything under a data-use agreement. **When in
-  doubt, ask your mentor first.**
-- **You own what you submit.** On your poster, in your report, in the repo:
-  every line is yours, whoever typed it. "The AI did it" is never an excuse.
+- **Your data doesn't have to leave.** Your prompts and code go to a company's
+  servers; your **data** doesn't have to. Never point a cloud tool at patient,
+  regulated, or DUA-covered data. When in doubt, ask your mentor first.
+- **Clear the project's code with your mentor first.** Most research code is
+  unpublished — that's normal; just get their OK before sending it to a cloud
+  tool. You can still use the agent *around* it: concepts, debugging from the
+  **error message**, pseudocode — a tutor and planner, no source handed over.
+- **You own what you submit.** Every line is yours, whoever typed it. "The AI
+  did it" is never an excuse.
 
 ::: {.notes}
 ~2 min. Say the data point plainly and without drama — we're at a medical
 campus; "help me write the code" is fine, "here's the dataset, analyze it"
-is the thing you never do with sensitive data. The accountability point
-closes the loop with slide 1: I own every claim on these slides.
+is the thing you never do with sensitive data. On the code bullet: don't
+imply unpublished = forbidden. Most research code is unpublished — that's the
+normal case, not a red flag. The only rule is get the mentor's OK before
+sending the project's source to a cloud tool (a promise I made to a mentor
+whose student is on not-yet-published code). Make the carve-out loud or they
+hear "no AI at all": they can still use it as a tutor/planner/debugger
+WITHOUT the source — explain a concept, debug from the error text, sketch
+pseudocode, plan the workflow. And mentor rules override me, always. The
+accountability point closes the loop with the opener: I own every claim on
+these slides.
 :::
 
 # Part 7: Getting started {background-color="#800000"}
@@ -1200,7 +1273,7 @@ Pick a **small, annoying, real** task — about what you'd bring to **one mentor
 1. Put the project in git; write a 10-line `AGENTS.md`
 2. Delegate with the template: goal, context, **what would convince you**
 3. Require the report: commands · artifacts · what changed · **uncertainty**
-4. Audit it: the diff, the inputs, the counts — five minutes
+4. Audit the outputs (not the code): right data in? key number sane? row count unchanged — or the change explained? — five minutes
 5. First mistake you catch → first rule in your `AGENTS.md`
 
 . . .
@@ -1217,7 +1290,7 @@ the hour was worth it.
 
 1. **You are the PI.** Delegate implementation; own the question, the design, and the interpretation.
 2. **Keep the lab notebook.** You can't rely on the agent's memory — so the project's learning has to live in the repo. The notebook is where it lives (`AGENTS.md` and provenance feed it); every caught mistake becomes a rule.
-3. **Trust is earned by verification.** Check the diffs, the inputs, the counts — and verify on a case you already know.
+3. **Trust is earned by verification.** Don't just check that it *ran* — check what it *produced*: the right data went in, the headline number passes a smell test, the dataset didn't change size without a reason. Then verify on a case where you already know the answer.
 
 . . .
 
