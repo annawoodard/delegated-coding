@@ -216,7 +216,6 @@ and fixes them** — for minutes to hours, without you watching.
 
 One word you'll hear: the program wrapped around the model — **Claude Code**,
 **Cursor**, **Codex** — is called the **harness**. It supplies the tools and the rules.
-Use whichever you can get: the *management skills* transfer across all of them.
 
 ## One more concept: the context window
 
@@ -500,9 +499,6 @@ can't happen again.
 > "Don't run experiments that **won't change the decision.**"
 > [— design for the result that changes your next move]{.smallgray}
 
-> "Don't take the easy patch when it **weakens the science.**"
-> [— preserve the signal first; optimize the runtime second]{.smallgray}
-
 ## When a lesson outgrows the project: **skills**
 
 `AGENTS.md` is memory for *one* project. Lessons that generalize become
@@ -524,9 +520,9 @@ I've published mine, free to install — [**uchicago-dsi/ai-sci-skills**](https:
 - `$skeptical-labmate` — **stress-test** a claim or baseline
 - `$lab-notebook` / `$handoff` — records that stay **restartable**
 
-## 3. Demand the full loop, not just code
+## 3. Demand a report, not just code
 
-Ask for **inspect → plan → implement → verify** — and a report at the end:
+Don't accept just code — **demand a report at the end**:
 
 1. the **commands** that were run
 2. the **artifacts** produced (files, figures, tables)
@@ -672,9 +668,6 @@ You wake up to a table of **reproducible** runs and a notebook saying **what won
 Remember: fluent and confident **by construction**. The dangerous failures
 don't crash — they run clean and lie quietly:
 
-- the **rows included in an analysis silently change** between runs
-  (different filters, different missing-data handling — different denominator)
-- it grabs the **wrong file** when several similar ones exist (`data_final_v2.csv`...)
 - two runs **share a hidden assumption**, so their agreement is fake evidence
 - the summary sounds **more confident than the evidence supports**
 
@@ -682,6 +675,10 @@ don't crash — they run clean and lie quietly:
 
 Don't go hunting in the code — these surface only in the **outputs**: the
 **row counts**, the **file actually loaded**, the **config**, the **summary's wording**.
+
+. . .
+
+Five minutes per task. That's the entire price of staying in charge.
 
 ## Case study: the seed that didn't vary
 
@@ -708,23 +705,7 @@ The fix wasn't "be more careful." It was a new rule written into `AGENTS.md`:
 
 . . .
 
-You can't list the failure modes in advance — **harvest them**.
-By August, your `AGENTS.md` is institutional memory.
-
-## Make auditing cheap
-
-Working at a higher level means it's easy to miss details.
-The fix is **not** micromanagement — it's a short checklist you *always* run:
-
-- the final **figure or table** — does it pass a smell test?
-- the **command**, the **inputs actually loaded**, the **row counts** —
-  could you rerun it? did the dataset change size? why?
-- **what differs between runs** — seeds, configs, data versions
-- the report's **uncertainty note** — does the language outrun the evidence?
-
-. . .
-
-Five minutes per task. That's the entire price of staying in charge.
+You can't list the failure modes in advance — **harvest them.**
 
 # Part 6: The student catch {background-color="#800000"}
 

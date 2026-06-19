@@ -19,3 +19,10 @@ micromamba run -n quarto quarto render slides.qmd
 
 Companion skills referenced in the talk:
 [uchicago-dsi/ai-sci-skills](https://github.com/uchicago-dsi/ai-sci-skills).
+
+## License
+
+[![CC BY 4.0](https://licensebuttons.net/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
+
+© Anna Woodard. Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) —
+reuse and adapt freely, including commercially, as long as you credit me.
