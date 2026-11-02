@@ -134,3 +134,13 @@ $presentation-line-height: 1.4;
   background-repeat: no-repeat;
   z-index: 60;
 }
+
+// Mermaid lays a diagram out at its own natural pixel size and stamps that width on the SVG, so a
+// simple flowchart occupies a third of the slide and its labels render far smaller than body text.
+// The viewBox makes the drawing scalable, so widening the SVG magnifies the whole diagram, boxes
+// and text together, instead of clipping it the way a font-size override would.
+.reveal .slides section .mermaid-js {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
